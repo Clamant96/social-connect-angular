@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+
+/*
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Vollkorn', serif;
+  font-family: 'Lobster Two', cursive;
+*/
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+
+  background-color: var(--background-page);
+
+}
+
+:root {
+  --background-page: #fafafa;
+  --background-login: #ffffff;
+  --background-header: #ffffff;
+  --background-section: #ffffff;
+
+  --color-text-black: #262626;
+  --color-text-white: #ffffff;
+  --color-text-gray: #8e8e8e;
+  --color-text-gray-ligth: #dbdbdb;
+  --color-text-blue-text-link-1: #00376b;
+  --color-text-blue-text-link-2: #0095f6;
+
+  --border-gray: #dbdbdb;
+  --border-gray-ligth: #e6e6e6;
+
+  --background-button-blue: #0095f6;
+
+  --box-shadow: #262626;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+
+}

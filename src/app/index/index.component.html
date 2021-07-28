@@ -1,0 +1,168 @@
+<section>
+  <div class="feed-noticias">
+    <div class="header">
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+      <div class="histories-usuario">
+        <div class="img">
+          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
+        </div>
+        <p>Username</p>
+      </div>
+    </div>
+    <div class="feed">
+      <div class="postagem-usuario" *ngFor='let postagem of listaDePostagens' >
+        <div class="header">
+          <div class="img">
+            <img src="{{ postagem.img }}" alt="{{ postagem.usuario }}">
+          </div>
+          <p>{{ postagem.usuario.username }}</p>
+        </div>
+        <div class="img-postagem">
+          <img src="http://s2.glbimg.com/JEQbNfs7b5d8DK01QckhR3rHKA8=/smart/e.glbimg.com/og/ed/f/original/2016/12/08/13414182_197209087341764_1783710095_n.jpg" alt="">
+        </div>
+        <div class="acoes-postagem">
+          <div class="icon" (click)="likePostagem(postagem.id)" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+            </svg>
+          </div>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+              <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+            </svg>
+          </div>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+              <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+            </svg>
+          </div>
+          <div class="qt-curtidas-postagem">
+            <p>{{ postagem.likes }} curtidas</p>
+          </div>
+        </div>
+        <div class="comentarios-postagem-usuario">
+          <h5>{{ postagem.usuario.username }}</h5>
+          <p>{{ postagem.descricao }}</p>
+        </div>
+        <div class="mensagens-postagem" *ngFor='let mensagem of postagem.mensagens' >
+          <h5>{{ mensagem.username }}</h5>
+          <p>{{ mensagem.descricao }}</p>
+        </div>
+        <div class="footer">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+            </svg>
+          </div>
+          <div class="postagem">
+            <input [(ngModel)]='mensagem.descricao' type="text" name="descricao" id="descricao" placeholder="Adicione um comentário..." >
+          </div>
+          <button type="submit" (click)='postMensagemPostagem(postagem.id)' >
+            Publicar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bloco-sugestoes-perfis">
+    <div class="sugestoes-perfil">
+      <div class="dados-meu-perfil">
+        <div class="meu-perfil">
+          <div class="img">
+            <img src="{{ img }}" alt="{{ username }}">
+          </div>
+          <div class="dados-usuario">
+            <h5>{{ username }}</h5>
+            <p>{{ nome }}</p>
+          </div>
+        </div>
+        <button type="button">
+          Mudar
+        </button>
+      </div>
+      <div class="sugestoes-perfil-usuarios">
+        <h5>Sugestões para você</h5>
+        <div class="dados-meu-perfil" *ngFor='let user of listaDeUsuarios' >
+          <div class="meu-perfil">
+            <div class="img">
+              <img src="{{ user.img }}" alt="{{ user.username }}">
+            </div>
+            <div class="dados-usuario">
+              <h5>{{ user.username }}</h5>
+              <p>{{ user.nome }}</p>
+            </div>
+          </div>
+          <button type="button">
+            Seguir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
