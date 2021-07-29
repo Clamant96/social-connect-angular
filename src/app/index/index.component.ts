@@ -93,8 +93,8 @@ export class IndexComponent implements OnInit {
 
   }
 
-  likePostagem(id: number) {
-    this.postagemService.adicionarlike(id).subscribe(() => {
+  likePostagem(idUsuario: number, idPostagem: number) {
+    this.postagemService.likePostagem(idUsuario, idPostagem).subscribe(() => {
       this.findAllByPostagensUsuarios();
 
     });

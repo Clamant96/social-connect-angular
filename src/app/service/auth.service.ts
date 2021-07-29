@@ -1,6 +1,6 @@
 import { Usuario } from './../model/Usuario';
 import { UserLogin } from './../model/UserLogin';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -11,6 +11,11 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
 
   public url = environment.service + environment.port;
+
+  autorizacao = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+
+  }
 
   constructor(
     private http: HttpClient
@@ -29,7 +34,7 @@ export class AuthService {
 
   pesquisaUsuario(pesquisa: String): Observable<Usuario[]> {
 
-    return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${pesquisa}`);
+    return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${pesquisa}`, this.autorizacao);
   }
 
   logado() {

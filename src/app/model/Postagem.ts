@@ -8,5 +8,6 @@ export class Postagem {
   public likes: number;
   public usuario: Usuario;
   public mensagens: Mensagem[];
+  public likePostagem: Usuario[];
 
 }

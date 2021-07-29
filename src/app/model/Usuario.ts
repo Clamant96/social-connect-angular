@@ -9,5 +9,6 @@ export class Usuario {
   public senha: string;
   public biografia: string;
   public postagens: Postagem;
+  public like: Postagem[];
 
 }

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Postagem } from './../model/Postagem';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -11,6 +11,11 @@ export class PostagemService {
 
   public url = environment.service + environment.port;
 
+  autorizacao = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+
+  }
+
   constructor(
     private http: HttpClient
 
@@ -18,22 +23,22 @@ export class PostagemService {
 
   getAllByPostagensUsuarios() {
 
-    return this.http.get<Postagem[]>(`${this.url}/postagens`);
+    return this.http.get<Postagem[]>(`${this.url}/postagens`, this.autorizacao);
   }
 
   getByIdPostagemUsuario(id: number): Observable<Postagem> {
 
-    return this.http.get<Postagem>(`${this.url}/postagens/${id}`);
+    return this.http.get<Postagem>(`${this.url}/postagens/${id}`, this.autorizacao);
   }
 
   putPostagemUsuario(postagem: Postagem): Observable<Postagem> {
 
-    return this.http.put<Postagem>(`${this.url}/postagens`, postagem);
+    return this.http.put<Postagem>(`${this.url}/postagens`, postagem, this.autorizacao);
   }
 
-  adicionarlike(id: number) {
+  likePostagem(idPostagem: number, idUsuario: number): Observable<Postagem> {
 
-    return this.http.get(`${this.url}/postagens/adicionarlike/${id}`);
+    return this.http.put<Postagem>(`${this.url}/postagens/likes_usuario_postagem/likePostagem/${idPostagem}/like/${idUsuario}`, this.autorizacao);
   }
 
 }

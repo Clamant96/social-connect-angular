@@ -78,15 +78,15 @@
       <div class="postagem-usuario" *ngFor='let postagem of listaDePostagens' >
         <div class="header">
           <div class="img">
-            <img src="{{ postagem.img }}" alt="{{ postagem.usuario }}">
+            <img src="{{ postagem.usuario.img }}" alt="{{ postagem.usuario }}">
           </div>
           <p>{{ postagem.usuario.username }}</p>
         </div>
         <div class="img-postagem">
-          <img src="http://s2.glbimg.com/JEQbNfs7b5d8DK01QckhR3rHKA8=/smart/e.glbimg.com/og/ed/f/original/2016/12/08/13414182_197209087341764_1783710095_n.jpg" alt="">
+          <img src="{{ postagem.img }}" alt="{{ postagem.usuario.username }}">
         </div>
         <div class="acoes-postagem">
-          <div class="icon" (click)="likePostagem(postagem.id)" >
+          <div class="icon" (click)="likePostagem(idUsuarioLogado, postagem.id)" >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
               <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
             </svg>
@@ -102,7 +102,7 @@
             </svg>
           </div>
           <div class="qt-curtidas-postagem">
-            <p>{{ postagem.likes }} curtidas</p>
+            <p>{{ postagem.likePostagem.length }} curtidas</p>
           </div>
         </div>
         <div class="comentarios-postagem-usuario">
