@@ -19,6 +19,7 @@ export class IndexComponent implements OnInit {
 
   mensagem: Mensagem = new Mensagem();
   postagem: Postagem = new Postagem();
+  usuarioPostagem: Usuario = new Usuario();
 
   usernameMensagem = environment.username;
 
@@ -53,7 +54,25 @@ export class IndexComponent implements OnInit {
     this.postagemService.getByIdPostagemUsuario(id).subscribe((resp: Postagem) => {
       this.postagem = resp;
 
+      this.usuarioService.getByIdUsuario(resp.usuario.id).subscribe((resp: Usuario) => {
+        this.usuarioPostagem = resp;
+
+      }, erro => {
+        if(erro.status == 500 || erro.status == 400) {
+          alert('Ocorreu um erro ao tentar vizualizar a postagem!');
+
+        }
+
+      });
+
+    }, erro => {
+      if(erro.status == 500 || erro.status == 400) {
+        alert('Ocorreu um erro ao tentar abrir a postagem!');
+
+      }
+
     });
+
   }
 
   findAllByUsuarios() {
@@ -81,7 +100,7 @@ export class IndexComponent implements OnInit {
 
       this.findAllByPostagensUsuarios();
 
-      //this.postagem = new Postagem();
+      this.mensagem = new Mensagem();
 
     }, erro => {
       if(erro.status == 500) {

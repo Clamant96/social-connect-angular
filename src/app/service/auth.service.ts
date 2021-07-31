@@ -32,6 +32,11 @@ export class AuthService {
     return this.http.post<Usuario>(`${this.url}/usuarios/cadastrar`, cadastro);
   }
 
+  atualizar(atualizacao: Usuario): Observable<Usuario> {
+
+    return this.http.put<Usuario>(`${this.url}/usuarios/atualizar`, atualizacao, this.autorizacao);
+  }
+
   pesquisaUsuario(pesquisa: String): Observable<Usuario[]> {
 
     return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${pesquisa}`, this.autorizacao);

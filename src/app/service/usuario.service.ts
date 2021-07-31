@@ -1,3 +1,4 @@
+import { Postagem } from './../model/Postagem';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -24,6 +25,16 @@ export class UsuarioService {
   getAllByUsuarios() {
 
     return this.http.get<Usuario[]>(`${this.url}/usuarios`, this.autorizacao);
+  }
+
+  getByIdUsuario(id: number): Observable<Usuario> {
+
+    return this.http.get<Usuario>(`${this.url}/usuarios/${id}`, this.autorizacao);
+  }
+
+  getAllByUsernameUsuario(username: string) {
+
+    return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${username}`, this.autorizacao);
   }
 
 }

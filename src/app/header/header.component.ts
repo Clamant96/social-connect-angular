@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   usarname = environment.username;
   img = environment.img;
   nomeSite = environment.nomeSite;
+  idUsuario = environment.id;
 
   usuario: Usuario = new Usuario();
   listaUsuario: Usuario[];

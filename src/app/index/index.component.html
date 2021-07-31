@@ -76,13 +76,14 @@
     </div>
     <div class="feed">
       <div class="postagem-usuario" *ngFor='let postagem of listaDePostagens' >
+
         <div class="header">
           <div class="img">
             <img src="{{ postagem.usuario.img }}" alt="{{ postagem.usuario }}">
           </div>
           <p>{{ postagem.usuario.username }}</p>
         </div>
-        <div class="img-postagem">
+        <div class="img-postagem" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findByIdPostagem(postagem.id)" >
           <img src="{{ postagem.img }}" alt="{{ postagem.usuario.username }}">
         </div>
         <div class="acoes-postagem">
@@ -127,6 +128,32 @@
             Publicar
           </button>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="vizualizar-postagem">
+              <div class="img">
+                <img src="{{ postagem.img }}" alt="{{ postagem.usuario.username }}">
+              </div>
+              <div class="dados-postagem">
+                <div class="dados-usuario-postagem">
+                  <div class="img">
+                    <img src="{{ postagem.usuario.img }}" >
+                  </div>
+                  <h5>{{ postagem.usuario.username }}</h5>
+                </div>
+                <div class="mensagens-postagem" *ngFor='let mensagem of postagem.mensagens'>
+                  <h5>{{ mensagem.username }}</h5>
+                  <p>{{ mensagem.descricao }}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

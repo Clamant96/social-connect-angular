@@ -1,0 +1,331 @@
+section {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--background-page);
+
+}
+
+section .bloco-perfil {
+  margin-top: 2%;
+
+  width: 65%;
+  height: auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+}
+
+section .bloco-perfil .img {
+  width: 35%;
+  height: auto;
+
+  padding: 0% 10% 0% 10%;
+
+}
+
+section .bloco-perfil .img img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+section .bloco-perfil .dados-perfil {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 65%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .nome-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 45%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .nome-perfil h5 {
+  font-size: 28px;
+  font-weight: 200;
+
+  color: var(--color-text-black);
+
+  margin: 0 !important;
+
+}
+
+section .bloco-perfil .dados-perfil .nome-perfil a {
+  border: 1px solid var(--border-gray);
+  border-radius: 3px;
+
+  background-color: transparent;
+
+  color: var(--color-text-black);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 1% 3%;
+
+  text-decoration: none;
+
+}
+
+section .bloco-perfil .dados-perfil .nome-perfil .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 8%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .nome-perfil .icon svg {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .publicacoes {
+  width: 100%;
+  height: auto;
+
+  padding: 2% 0%;
+
+}
+
+section .bloco-perfil .dados-perfil .publicacoes p {
+  margin: 0 !important;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--color-text-black);
+
+  margin: 0 !important;
+
+}
+
+section .bloco-perfil .dados-perfil .publicacoes p strong {
+  font-size: 16px;
+  font-weight: 600;
+
+  color: var(--color-text-black);
+
+  margin: 0 !important;
+
+}
+
+section .bloco-perfil .dados-perfil .usuario-nome {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .usuario-nome p {
+  margin: 0 !important;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: var(--color-text-black);
+
+  margin: 0 !important;
+
+}
+
+section .bloco-perfil .dados-perfil .usuario-bio {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .usuario-bio p {
+  margin: 0 !important;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--color-text-black);
+
+}
+
+section .bloco-perfil .dados-perfil .link-perfil {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco-perfil .dados-perfil .link-perfil a {
+  margin: 0 !important;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: var(--color-text-blue-text-link-1);
+
+  text-decoration: none;
+
+}
+
+section hr {
+  width: 63%;
+  height: 0.5px;
+
+  background-color: var(--color-text-gray);
+
+  margin-top: 3%;
+  margin-bottom: 1%;
+
+}
+
+section .postagens {
+  width: 65%;
+  height: auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  flex-wrap: wrap;
+
+}
+
+section .postagens .post {
+  margin: 1.5%;
+
+  width: 30.3333%;
+  height: 45vh;
+
+  background-position: center;
+  background-size: 100%;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--background-section);
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .img {
+  width: 60%;
+  height: auto;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .img img {
+  width: 100%;
+  height: auto;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem {
+  width: 40%;
+  height: 78.5vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem {
+  width: 100%;
+  height: auto;
+
+  padding: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-bottom: 1px solid var(--border-gray);
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem .img {
+  width: 12%;
+  height: auto;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem .img img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem h5 {
+  font-size: 13px;
+  font-weight: 500;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem {
+  width: 100%;
+  height: auto;
+
+  padding: 2% 0%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem h5 {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}
+
+section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem p {
+  font-size: 15px;
+  font-weight: 400;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}

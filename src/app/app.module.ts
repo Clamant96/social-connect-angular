@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HeaderComponent } from './header/header.component';
 import { PerfilComponent } from './edicao/perfil/perfil.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PerfilComponent } from './edicao/perfil/perfil.component';
     LoginComponent,
     CadastroComponent,
     HeaderComponent,
-    PerfilComponent
+    PerfilComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
