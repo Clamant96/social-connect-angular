@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class AuthService {
   }
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
 
   ) { }
 
@@ -34,7 +36,7 @@ export class AuthService {
 
   atualizar(atualizacao: Usuario): Observable<Usuario> {
 
-    return this.http.put<Usuario>(`${this.url}/usuarios/atualizar`, atualizacao, this.autorizacao);
+    return this.http.put<Usuario>(`${this.url}/usuarios/atualizar`, atualizacao);
   }
 
   pesquisaUsuario(pesquisa: String): Observable<Usuario[]> {
@@ -51,6 +53,20 @@ export class AuthService {
     }
 
     return login;
+
+  }
+
+  logout() {
+    environment.id = 0;
+    environment.nome = '';
+    environment.img = '';
+    environment.biografia = '';
+    environment.senha = '';
+    environment.site = '';
+    environment.token = '';
+    environment.username = '';
+
+    this.router.navigate(['/login']);
 
   }
 

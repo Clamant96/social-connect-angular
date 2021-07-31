@@ -4,6 +4,7 @@ import { UsuarioService } from './../service/usuario.service';
 import { Postagem } from './../model/Postagem';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -33,6 +34,11 @@ export class PerfilUsuarioComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
+    if(environment.token == ''){
+      this.router.navigate(['/login']);
+
+    }
+
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
 
@@ -40,6 +46,12 @@ export class PerfilUsuarioComponent implements OnInit {
 
   findByIdUsuario(id: number) {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+
+      if(resp.img == null) {
+        resp.img = '../../assets/img/person_perfil_vazio.png';
+
+      }
+
       this.usuario = resp;
 
       this.findByPostagensUsuario();
@@ -96,6 +108,8 @@ export class PerfilUsuarioComponent implements OnInit {
       }
 
     });
+
+    this.postagem = new Postagem();
 
   }
 

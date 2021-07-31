@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from './../../service/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/Usuario';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-perfil',
@@ -28,6 +29,11 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
+    if(environment.token == ''){
+      this.router.navigate(['/login']);
+
+    }
+
     this.idUsuario = this.route.snapshot.params['id'];
 
     this.findByIdUsuario(this.idUsuario);
@@ -36,6 +42,12 @@ export class PerfilComponent implements OnInit {
 
   findByIdUsuario(id: number) {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+
+      if(resp.img == null) {
+        resp.img = '../../assets/img/person_perfil_vazio.png';
+
+      }
+
       this.usuario = resp;
 
     });
@@ -53,11 +65,29 @@ export class PerfilComponent implements OnInit {
 
     }else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
+
+
+        //alert('Usuario atualizado com sucesso!');
+
+        console.log(resp.id);
+        console.log(resp.nome);
+        console.log(resp.username);
+        console.log(resp.img);
+        console.log("Postagens: ");
+        console.log(resp.postagens);
+        console.log(resp.senha);
+        console.log(resp.site);
+        console.log(resp.biografia);
+
         this.usuario = resp;
 
-        this.router.navigate(['/login']);
+        this.authService.logout();
 
-        alert('Usuario atualizado com sucesso!');
+      }, erro => {
+        if(erro.status == 500 || erro.status == 400) {
+          alert('Ocorreu um erro ao tentar atualizar o perfil!');
+
+        }
 
       });
 

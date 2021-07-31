@@ -1,3 +1,5 @@
+import { AuthService } from './../service/auth.service';
+import { Router } from '@angular/router';
 import { UsuarioService } from './../service/usuario.service';
 import { Usuario } from './../model/Usuario';
 import { MensagemService } from './../service/mensagem.service';
@@ -18,7 +20,7 @@ export class IndexComponent implements OnInit {
   listaDeUsuarios: Usuario[];
 
   mensagem: Mensagem = new Mensagem();
-  postagem: Postagem = new Postagem();
+  minhasPostagens: Postagem = new Postagem();
   usuarioPostagem: Usuario = new Usuario();
 
   usernameMensagem = environment.username;
@@ -31,15 +33,23 @@ export class IndexComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private mensagemService: MensagemService,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private authService: AuthService,
+    private router: Router
 
   ) { }
 
   ngOnInit() {
     window.scroll(0,0);
 
+    if(environment.token == '') {
+      this.router.navigate(['/login']);
+
+    }
+
     this.findAllByPostagensUsuarios();
     this.findAllByUsuarios();
+    this.imgUsuario();
 
   }
 
@@ -52,7 +62,7 @@ export class IndexComponent implements OnInit {
 
   findByIdPostagem(id: number) {
     this.postagemService.getByIdPostagemUsuario(id).subscribe((resp: Postagem) => {
-      this.postagem = resp;
+      this.minhasPostagens = resp;
 
       this.usuarioService.getByIdUsuario(resp.usuario.id).subscribe((resp: Usuario) => {
         this.usuarioPostagem = resp;
@@ -77,12 +87,23 @@ export class IndexComponent implements OnInit {
 
   findAllByUsuarios() {
     this.usuarioService.getAllByUsuarios().subscribe((resp: Usuario[]) => {
+
+      for(let i = 0; i < resp.length; i++) {
+        if(resp[i].img == null) {
+          resp[i].img = '../../assets/img/person_perfil_vazio.png';
+
+        }
+
+      }
+
       this.listaDeUsuarios = resp;
 
     }, erro => {
       if(erro.status == 500) {
         alert('Ocorreu um erro ao tentar carregar os usuarios!');
+
       }
+
     });
 
   }
@@ -91,9 +112,9 @@ export class IndexComponent implements OnInit {
     this.mensagem.username = environment.username;
 
     /* ACESSA O OBJETO TEMA(ID), E DENTRO DELE INSERE O DADO VINDO DA OPCAO ESCOLHIDA PELO USUARIO */
-    this.postagem.id = idPostagem;
+    this.minhasPostagens.id = idPostagem;
     /* INSERE O ID DE TEMA DENTRO DE POSTAGEM(TEMA) */
-    this.mensagem.postagem = this.postagem;
+    this.mensagem.postagem = this.minhasPostagens;
 
     this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
       this.mensagem = resp;
@@ -117,6 +138,19 @@ export class IndexComponent implements OnInit {
       this.findAllByPostagensUsuarios();
 
     });
+
+  }
+
+  logoutUsuario() {
+    this.authService.logout();
+
+  }
+
+  imgUsuario() {
+    if(this.img == null) {
+      this.img = '../../assets/img/person_perfil_vazio.png';
+
+    }
 
   }
 

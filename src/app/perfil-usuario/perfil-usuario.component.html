@@ -49,7 +49,7 @@
                 </div>
                 <h5>{{ usuarioPostagem.username }}</h5>
               </div>
-              <div class="mensagens-postagem" *ngFor='let mensagem of minhasPostagens.mensagens'>
+              <div class="mensagens-postagem" *ngFor='let mensagem of postagem.mensagens' >
                 <h5>{{ mensagem.username }}</h5>
                 <p>{{ mensagem.descricao }}</p>
               </div>
