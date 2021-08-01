@@ -36,7 +36,7 @@ header .header .itens-header h1 {
 }
 
 header .header .itens-header .pesquisa {
-  width: 30%;
+  width: 15%;
   height: auto;
 
 }
@@ -84,7 +84,7 @@ header .header .itens-header .pesquisa .input .icon {
   align-items: center;
   justify-content: center;
 
-  width: 2.5%;
+  width: 5%;
   height: auto;
 
 }
@@ -102,7 +102,7 @@ header .header .itens-header .menu-usuario {
   align-items: center;
   justify-content: space-around;
 
-  width: 8%;
+  width: 10%;
   height: auto;
 
 }
@@ -130,7 +130,7 @@ header .header .itens-header .menu-usuario .img-perfil img {
 }
 
 header .header .itens-header .menu-usuario .img-perfil svg {
-  width: 100%;
+  width: 25px;
   height: auto;
 
   color: var(--color-text-black);

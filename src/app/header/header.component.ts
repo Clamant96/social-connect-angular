@@ -2,6 +2,7 @@ import { AuthService } from './../service/auth.service';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Postagem } from '../model/Postagem';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,8 @@ export class HeaderComponent implements OnInit {
   listaUsuario: Usuario[];
 
   nomePesquisado: string;
+
+  postagem: Postagem = new Postagem();
 
   constructor(
     private authService: AuthService

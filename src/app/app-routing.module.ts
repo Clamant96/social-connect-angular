@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PerfilComponent } from './edicao/perfil/perfil.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { PostagemComponent } from './postagem/postagem.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'cadastrar', component: CadastroComponent },
   { path: 'home', component: IndexComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
-  { path: 'editar-perfil/:id', component: PerfilComponent }
+  { path: 'editar-perfil/:id', component: PerfilComponent },
+  { path: 'postagem', component: PostagemComponent }
 ];
 
 @NgModule({

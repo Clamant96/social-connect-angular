@@ -553,7 +553,6 @@ section .bloco-sugestoes-perfis .sugestoes-perfil .sugestoes-perfil-usuarios .da
 
 }
 
-/* AJUSTE */
 section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-postagem {
   width: 100%;
   height: auto;
@@ -580,7 +579,7 @@ section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-
 
 section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-postagem .dados-postagem {
   width: 40%;
-  height: 78.5vh;
+  height: 600px;
 
   display: flex;
   align-items: center;
