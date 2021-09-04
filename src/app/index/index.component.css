@@ -506,7 +506,7 @@ section .bloco-sugestoes-perfis .sugestoes-perfil .sugestoes-perfil-usuarios .da
 
 }
 
-section .bloco-sugestoes-perfis .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario h5 {
+section .bloco-sugestoes-perfis .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario a {
   font-weight: 600;
   font-size: 14px;
 
@@ -514,6 +514,8 @@ section .bloco-sugestoes-perfis .sugestoes-perfil .sugestoes-perfil-usuarios .da
   margin: 0;
 
   color: var(--color-text-black);
+
+  text-decoration: none !important;
 
 }
 
@@ -558,7 +560,7 @@ section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-
   height: auto;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   background-color: var(--background-section);
@@ -579,7 +581,7 @@ section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-
 
 section .feed-noticias .feed .postagem-usuario .modal .modal-dialog .vizualizar-postagem .dados-postagem {
   width: 40%;
-  height: 600px;
+  height: auto;
 
   display: flex;
   align-items: center;

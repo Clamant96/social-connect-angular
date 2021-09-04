@@ -30,6 +30,9 @@ export class IndexComponent implements OnInit {
   img = environment.img;
   idUsuarioLogado = environment.id;
 
+  memoriaDesabilitado = 'none';
+  memoriaAbilitado = 'none';
+
   constructor(
     private postagemService: PostagemService,
     private mensagemService: MensagemService,
@@ -58,6 +61,7 @@ export class IndexComponent implements OnInit {
       this.listaDePostagens = resp;
 
     });
+
   }
 
   findByIdPostagem(id: number) {

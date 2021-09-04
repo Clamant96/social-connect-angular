@@ -48,7 +48,13 @@ export class HeaderComponent implements OnInit {
     this.authService.pesquisaUsuario(pesquisa).subscribe((resp: Usuario[]) => {
       this.listaUsuario = resp;
 
+      console.log("Usuario: ");
+      console.log(this.listaUsuario);
+
     });
+
+    this.nomePesquisado = '';
+
   }
 
   imgUsuario() {

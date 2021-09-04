@@ -225,7 +225,7 @@ section .postagens .post .modal .modal-dialog .vizualizar-postagem {
   height: auto;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   background-color: var(--background-section);
@@ -246,7 +246,7 @@ section .postagens .post .modal .modal-dialog .vizualizar-postagem .img img {
 
 section .postagens .post .modal .modal-dialog .vizualizar-postagem .dados-postagem {
   width: 40%;
-  height: 600px;
+  height: auto;
 
   display: flex;
   align-items: center;

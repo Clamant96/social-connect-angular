@@ -181,7 +181,7 @@
               <img src="{{ user.img }}" alt="{{ user.username }}">
             </div>
             <div class="dados-usuario">
-              <h5>{{ user.username }}</h5>
+              <a [routerLink]="['/perfil', user.id]" >{{ user.username }}</a>
               <p>{{ user.nome }}</p>
             </div>
           </div>
