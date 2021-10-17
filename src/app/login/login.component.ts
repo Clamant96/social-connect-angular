@@ -44,6 +44,9 @@ export class LoginComponent implements OnInit {
       console.log(environment.biografia);
       console.log(environment.site);
 
+      /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
+      localStorage.setItem('token', environment.token);
+
       this.router.navigate(['/home']);
 
     }, erro => {

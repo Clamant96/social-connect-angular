@@ -13,8 +13,10 @@ export class UsuarioService {
 
   public url = environment.service + environment.port;
 
+  /* CRIA UM TOKEN, PARA REALIZAR A AUTENTICACAO DO ENDPOINT, POR MEIO DO METODO Authorization, PASSANDO COMO PAREMTRO O TOKEN DO USUARIO LOGADO */
   autorizacao = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token') || '')
+    //headers: new HttpHeaders().set('Authorization', environment.token)
 
   }
 

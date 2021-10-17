@@ -37,7 +37,12 @@ export class PerfilUsuarioComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
-    if(environment.token == ''){
+    /*if(environment.token == ''){
+      this.router.navigate(['/login']);
+
+    }*/
+
+    if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
 
     }

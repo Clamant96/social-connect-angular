@@ -16,6 +16,8 @@ header .header {
 
   position: fixed;
 
+  z-index: 1000 !important;
+
 }
 
 header .header .itens-header {
