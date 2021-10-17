@@ -129,6 +129,42 @@ section .feed-noticias .header .histories-usuario .icon-adicionar-stories svg {
 
 }
 
+section .feed-noticias .header .histories-usuario .modal-storys {
+  background-color: var(--background-section);
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow-y: scroll;
+
+}
+
+section .feed-noticias .header .histories-usuario .modal-storys .img-story {
+  width: 100% !important;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2%;
+
+}
+
+section .feed-noticias .header .histories-usuario .modal-storys .img-story .img-s {
+  width: 30vw !important;
+  height: 78vh;
+
+  background-position: center;
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+
+}
+
 section .feed-noticias .feed {
   width: 100%;
   height: auto;

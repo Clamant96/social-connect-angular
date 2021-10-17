@@ -149,7 +149,7 @@ export class IndexComponent implements OnInit {
   }
 
   findByIdUsuario(id: number) {
-    window.document.querySelector('#modal-w3-controle')?.setAttribute('style', 'display:block;');
+    window.document.querySelector('#gerenciar-modal')?.setAttribute('style', 'display: block;');
 
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuarioStorys = resp;
