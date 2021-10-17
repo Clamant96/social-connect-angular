@@ -1,0 +1,15 @@
+<section class="container-fluid">
+  <div class="postagem">
+    <div class="img-postagem">
+      <img src="{{ story.img }}" >
+    </div>
+    <div class="input">
+      <input [(ngModel)]='story.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem">
+
+      <div class="botao">
+        <button type="submit" (click)='postStory()'>Pulicar</button>
+      </div>
+
+    </div>
+  </div>
+</section>

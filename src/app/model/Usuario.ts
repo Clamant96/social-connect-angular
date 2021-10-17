@@ -1,3 +1,4 @@
+import { Story } from './Story';
 import { Seguindo } from './Seguindo';
 import { Postagem } from './Postagem';
 
@@ -13,5 +14,6 @@ export class Usuario {
   public like: Postagem[];
   public seguindo: Seguindo;
   public listaSeguindo: Seguindo[];
+  public storys: Story;
 
 }

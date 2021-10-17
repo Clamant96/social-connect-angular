@@ -1,7 +1,7 @@
 <section>
   <div class="feed-noticias">
     <div class="header">
-      <div class="histories-usuario">
+      <div class="histories-usuario" routerLink="/story" >
         <div class="img retirar-borda">
           <img src="{{ img }}" alt="{{ username }}">
         </div>
@@ -12,7 +12,57 @@
           </svg>
         </div>
       </div>
-      <div class="histories-usuario">
+      <div *ngFor='let story of listaDeStorys' class="histories-usuario">
+        <div class="img instagram retirar-borda" (click)='findByIdUsuario(story.usuario.id)' >
+          <img src="{{ story.usuario.img }}" alt="{{ story.usuario.username }}" >
+        </div>
+        <p>{{ story.usuario.username }}</p>
+
+        <!-- Modal -->
+        <div class="modal fade" id="viewStoryUsuarioModal" tabindex="-1" aria-labelledby="viewStoryUsuarioModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="vizualizar-postagem" *ngFor='let foto of usuarioStorys.storys | orderBy: key: reverse' >
+              <!--<div class="img">
+                <img src="{{ story.usuario.img }}" alt="{{ story.usuario.username }}">
+              </div>-->
+              <div class="dados-postagem">
+                <div class="dados-usuario-postagem">
+                  <div class="img">
+                    <img src="{{ foto.img }}" >
+                  </div>
+                  <!--<h5>{{ foto.username }}</h5>-->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Modal W3 -->
+        <div class="w3-container">
+          <div id="modal-w3-controle" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+              <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('modal-w3-controle').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+                <h2>Modal Header</h2>
+              </header>
+              <div class="w3-container">
+
+                <!-- CARROCEL -->
+
+              </div>
+              <footer class="w3-container w3-teal">
+                <p>Modal Footer</p>
+              </footer>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--<div class="histories-usuario">
         <div class="img">
           <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
         </div>
@@ -77,16 +127,10 @@
           <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
         </div>
         <p>Username</p>
-      </div>
-      <div class="histories-usuario">
-        <div class="img">
-          <img src="../../assets/img/person_perfil_vazio.png" alt="Teste">
-        </div>
-        <p>Username</p>
-      </div>
+      </div>-->
     </div>
     <div class="feed">
-      <div class="postagem-usuario" *ngFor='let postagem of listaDePostagens' >
+      <div class="postagem-usuario" *ngFor='let postagem of listaDePostagens | orderBy: key: reverse' >
 
         <div class="header">
           <div class="img">

@@ -1,3 +1,4 @@
+import { StoryComponent } from './story/story.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'home', component: IndexComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil/:id', component: PerfilComponent },
-  { path: 'postagem', component: PostagemComponent }
+  { path: 'postagem', component: PostagemComponent },
+  { path: 'story', component: StoryComponent }
 ];
 
 @NgModule({

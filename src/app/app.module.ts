@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { PerfilComponent } from './edicao/perfil/perfil.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { PostagemComponent } from './postagem/postagem.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { StoryComponent } from './story/story.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PostagemComponent } from './postagem/postagem.component';
     HeaderComponent,
     PerfilComponent,
     PerfilUsuarioComponent,
-    PostagemComponent
+    PostagemComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { PostagemComponent } from './postagem/postagem.component';
     HttpClientModule,
     /* IMPORTA O FormsModule ==> PARA QUE SE POSSA UTILIZAR O ngModel DENTRO DO HTML */
     FormsModule,
+    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,5 @@
+import { Story } from './../model/Story';
+import { StoryService } from './../service/story.service';
 import { AuthService } from './../service/auth.service';
 import { Router } from '@angular/router';
 import { UsuarioService } from './../service/usuario.service';
@@ -18,10 +20,13 @@ export class IndexComponent implements OnInit {
 
   listaDePostagens: Postagem[];
   listaDeUsuarios: Usuario[];
+  listaDeStorys: Story[];
 
   mensagem: Mensagem = new Mensagem();
   minhasPostagens: Postagem = new Postagem();
   usuarioPostagem: Usuario = new Usuario();
+
+  usuarioStorys: Usuario = new Usuario();
 
   usernameMensagem = environment.username;
 
@@ -33,11 +38,15 @@ export class IndexComponent implements OnInit {
   memoriaDesabilitado = 'none';
   memoriaAbilitado = 'none';
 
+  key = 'data';
+  reverse = true;
+
   constructor(
     private postagemService: PostagemService,
     private mensagemService: MensagemService,
     private usuarioService: UsuarioService,
     private authService: AuthService,
+    private storyService: StoryService,
     private router: Router
 
   ) { }
@@ -55,6 +64,7 @@ export class IndexComponent implements OnInit {
 
     }
 
+    this.findAllByStorys();
     this.findAllByPostagensUsuarios();
     this.findAllByUsuarios();
     this.imgUsuario();
@@ -115,6 +125,43 @@ export class IndexComponent implements OnInit {
 
     });
 
+  }
+
+  findAllByStorys() {
+    this.storyService.getAllByStorys().subscribe((resp: Story[]) => {
+      this.listaDeStorys = resp;
+
+      try{
+        /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
+        this.listaDeStorys = this.listaDeStorys.filter((item, index, self) =>
+          index === self.findIndex((t) => (
+            t.usuario.nome === item.usuario.nome
+          ))
+        )
+
+      }catch(erro){
+        //console.log('OCORREU UM ERRO AO AGRUPAR O ARRAY);
+
+      }
+
+    });
+
+  }
+
+  findByIdUsuario(id: number) {
+    window.document.querySelector('#modal-w3-controle')?.setAttribute('style', 'display:block;');
+
+    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+      this.usuarioStorys = resp;
+
+      console.log(this.usuarioStorys);
+
+    }, erro => {
+      if(erro.status == 500 || erro.status == 400) {
+        alert('OCORREU UM ERRO AO TENTAR ABRIR O STORYS!!');
+      }
+
+    });
   }
 
   postMensagemPostagem(idPostagem: number) {
