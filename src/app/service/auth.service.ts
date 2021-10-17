@@ -68,6 +68,8 @@ export class AuthService {
     environment.token = '';
     environment.username = '';
 
+    localStorage.removeItem('token');
+
     this.router.navigate(['/login']);
 
   }
