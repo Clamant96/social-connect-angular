@@ -61,6 +61,8 @@ section .feed-noticias .header .histories-usuario {
   flex-direction: column;
   justify-content: center;
 
+  position: relative;
+
 }
 
 section .feed-noticias .header .histories-usuario .img {
@@ -69,6 +71,11 @@ section .feed-noticias .header .histories-usuario .img {
 
   border-radius: 50%;
   border: 3px solid var(--color-text-black);
+
+}
+
+section .feed-noticias .header .histories-usuario .retirar-borda {
+  border: 0px solid transparent !important;
 
 }
 
@@ -89,6 +96,36 @@ section .feed-noticias .header .histories-usuario p {
   font-size: 12px;
 
   color: var(--color-text-black);
+
+}
+
+section .feed-noticias .header .histories-usuario .icon-adicionar-stories {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin-top: 20%;
+
+}
+
+section .feed-noticias .header .histories-usuario .icon-adicionar-stories svg {
+  width: 17px !important;
+  height: 17px !important;
+
+  color: var(--background-button-blue);
+
+  background-color: var(--color-text-black);
+
+  border-radius: 50%;
+
+  border: 1px solid var(--color-text-black);
+
+  cursor: pointer;
 
 }
 
