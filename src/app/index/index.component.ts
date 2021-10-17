@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UsuarioService } from './../service/usuario.service';
 import { Usuario } from './../model/Usuario';
 import { MensagemService } from './../service/mensagem.service';
-import { environment } from './../../environments/environment';
+import { environment } from './../../environments/environment.prod';
 import { Mensagem } from './../model/Mensagem';
 import { PostagemService } from './../service/postagem.service';
 import { Component, OnInit } from '@angular/core';
@@ -156,6 +156,16 @@ export class IndexComponent implements OnInit {
 
     }
 
+  }
+
+  seguirUsuario(idSeguindo: number, idSeguidor: number) {
+    this.usuarioService.seguirUsuario(idSeguindo, idSeguidor).subscribe(() => {
+
+    }, erro => {
+      if(erro.status == 500 || erro.status == 400) {
+        alert('Ocorreu um erro ao tentar seguir o usuario!!');
+      }
+    });
   }
 
 }

@@ -36,6 +36,11 @@ export class PostagemService {
     return this.http.get<Postagem[]>(`${this.url}/postagens/postagensUsuario/${id}`, this.autorizacao);
   }
 
+  postPostagemUsuario(postagem: Postagem): Observable<Postagem> {
+
+    return this.http.post<Postagem>(`${this.url}/postagens`, postagem, this.autorizacao);
+  }
+
   putPostagemUsuario(postagem: Postagem): Observable<Postagem> {
 
     return this.http.put<Postagem>(`${this.url}/postagens`, postagem, this.autorizacao);

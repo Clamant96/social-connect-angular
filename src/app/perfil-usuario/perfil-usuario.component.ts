@@ -1,10 +1,11 @@
+import { Seguindo } from './../model/Seguindo';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostagemService } from './../service/postagem.service';
 import { UsuarioService } from './../service/usuario.service';
 import { Postagem } from './../model/Postagem';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -16,6 +17,8 @@ export class PerfilUsuarioComponent implements OnInit {
   usuario: Usuario = new Usuario();
   idUsuario: number;
   totalPostagens: number;
+  totalSeguindo: number;
+  totalSeguidores: number;
 
   postagem: Postagem = new Postagem();
   usuarioPostagem: Usuario = new Usuario();
@@ -54,6 +57,12 @@ export class PerfilUsuarioComponent implements OnInit {
 
       this.usuario = resp;
 
+      /* CALCULA A LISTA DE USUARIO SEGUIDOS PELO USUARIO LOGADO */
+      this.totalSeguindo = this.usuario.listaSeguindo.length;
+
+      /* CALCULA A LISTA DE USUARIO QUE SEGUEM O USUARIO LOGADO */
+      this.listaDeSeguidores(id);
+
       this.findByPostagensUsuario();
 
     }, erro => {
@@ -76,9 +85,29 @@ export class PerfilUsuarioComponent implements OnInit {
 
     }, erro => {
       if(erro.status == 500 || erro.status == 400) {
-        alert('Ocorreu um erro ao tentar carregar suas postagens!');
+        //alert('Ocorreu um erro ao tentar carregar suas postagens!');
 
-        this.router.navigate(['/login']);
+        //this.logout();
+
+        //this.router.navigate(['/login']);
+
+        this.postagemService.getAllByPostagensUsuarios().subscribe((resp: Postagem[]) => {
+
+          let memoria = [];
+
+          for(let i = 0; i < resp.length; i++) {
+            if(resp[i].usuario.id == this.idUsuario) {
+              memoria.push(resp[i]);
+            }
+          }
+
+          this.listaDePostagens = memoria;
+
+          console.log(this.listaDePostagens);
+
+          this.totalPostagens = this.listaDePostagens.length;
+
+        });
 
       }
 
@@ -110,6 +139,13 @@ export class PerfilUsuarioComponent implements OnInit {
     });
 
     this.postagem = new Postagem();
+
+  }
+
+  listaDeSeguidores(id: number) {
+    this.usuarioService.getByIdSeguindo(id).subscribe((resp: Seguindo) => {
+      this.totalSeguidores = resp.listaDeSeguindo.length;
+    });
 
   }
 

@@ -104,10 +104,14 @@ section .bloco-perfil .dados-perfil .nome-perfil .icon svg {
 }
 
 section .bloco-perfil .dados-perfil .publicacoes {
-  width: 100%;
+  width: 60%;
   height: auto;
 
   padding: 2% 0%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
 }
 
@@ -118,8 +122,6 @@ section .bloco-perfil .dados-perfil .publicacoes p {
   font-weight: 400;
 
   color: var(--color-text-black);
-
-  margin: 0 !important;
 
 }
 

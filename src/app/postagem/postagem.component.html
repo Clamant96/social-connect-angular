@@ -1,1 +1,16 @@
-<p>postagem works!</p>
+<section class="container-fluid">
+  <div class="postagem">
+    <div class="img-postagem">
+      <img src="{{ postagem.img }}" alt="{{ postagem.descricao }}">
+    </div>
+    <div class="input">
+      <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem">
+      <textarea [(ngModel)]='postagem.descricao' class="form-control" type="text" name="descricao" id="descricao" placeholder="Descrição"></textarea>
+
+      <div class="botao">
+        <button type="submit" (click)='postPostagem()'>Pulicar</button>
+      </div>
+
+    </div>
+  </div>
+</section>

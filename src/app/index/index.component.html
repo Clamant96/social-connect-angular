@@ -176,7 +176,7 @@
       <div class="sugestoes-perfil-usuarios">
         <h5>Sugestões para você</h5>
         <div class="dados-meu-perfil" *ngFor='let user of listaDeUsuarios' >
-          <div class="meu-perfil">
+          <div *ngIf='user.id != idUsuarioLogado' class="meu-perfil">
             <div class="img">
               <img src="{{ user.img }}" alt="{{ user.username }}">
             </div>
@@ -185,7 +185,7 @@
               <p>{{ user.nome }}</p>
             </div>
           </div>
-          <button type="button">
+          <button *ngIf='user.id != idUsuarioLogado' type="button" (click)='seguirUsuario(user.id, idUsuarioLogado)' >
             Seguir
           </button>
         </div>

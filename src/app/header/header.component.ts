@@ -1,7 +1,7 @@
 import { AuthService } from './../service/auth.service';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 
 @Component({
