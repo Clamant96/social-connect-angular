@@ -1,3 +1,4 @@
+import { EditarPostagemComponent } from './edicao/postagem/postagem.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +26,8 @@ import { StoryComponent } from './story/story.component';
     PerfilComponent,
     PerfilUsuarioComponent,
     PostagemComponent,
-    StoryComponent
+    StoryComponent,
+    EditarPostagemComponent
   ],
   imports: [
     BrowserModule,

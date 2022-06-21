@@ -34,7 +34,7 @@ section .feed-noticias .header {
   margin-bottom: 2%;
   padding: 2%;
 
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--border-gray);
 
   display: flex;
@@ -181,11 +181,13 @@ section .feed-noticias .feed .postagem-usuario {
   background-color: var(--background-section);
 
   border: 1px solid var(--border-gray);
-  border-radius: 10px;
+  border-radius: 8px;
 
 }
 
 section .feed-noticias .feed .postagem-usuario .header {
+  position: relative;
+
   width: 100%;
   height: auto;
 
@@ -233,6 +235,30 @@ section .feed-noticias .feed .postagem-usuario .header p {
 
 }
 
+section .feed-noticias .feed .postagem-usuario .header .icon {
+  position: absolute;
+
+  right: 0;
+
+  padding: 1%;
+
+  width: 5%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+section .feed-noticias .feed .postagem-usuario .header .icon svg {
+  width: 100%;
+  height: auto;
+
+}
+
 section .feed-noticias .feed .postagem-usuario .img-postagem {
   width: 100%;
   height: auto;
@@ -255,6 +281,11 @@ section .feed-noticias .feed .postagem-usuario .acoes-postagem {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+
+}
+
+section .feed-noticias .feed .postagem-usuario .acoes-postagem .preenche-like {
+  color: var(--color-like-postagem);
 
 }
 
@@ -478,6 +509,8 @@ section .bloco-sugestoes-perfis .sugestoes-perfil .dados-meu-perfil .meu-perfil 
   margin: 0;
 
   color: var(--color-text-black);
+
+  cursor: pointer;
 
 }
 

@@ -20,26 +20,26 @@ export class IndexComponent implements OnInit {
 
   listaDePostagens: Postagem[];
   listaDeUsuarios: Usuario[];
-  listaDeStorys: Story[];
+  public listaDeStorys: Story[];
 
-  mensagem: Mensagem = new Mensagem();
-  minhasPostagens: Postagem = new Postagem();
-  usuarioPostagem: Usuario = new Usuario();
+  public mensagem: Mensagem = new Mensagem();
+  public minhasPostagens: Postagem = new Postagem();
+  public usuarioPostagem: Usuario = new Usuario();
 
-  usuarioStorys: Usuario = new Usuario();
+  public usuarioStorys: Usuario = new Usuario();
 
-  usernameMensagem = environment.username;
+  public usernameMensagem = environment.username;
 
-  username = environment.username;
-  nome = environment.nome;
-  img = environment.img;
-  idUsuarioLogado = environment.id;
+  public username = environment.username;
+  public nome = environment.nome;
+  public img = environment.img;
+  public idUsuarioLogado = environment.id;
 
-  memoriaDesabilitado = 'none';
-  memoriaAbilitado = 'none';
+  public memoriaDesabilitado = 'none';
+  public memoriaAbilitado = 'none';
 
-  key = 'data';
-  reverse = true;
+  public key = 'data';
+  public reverse = true;
 
   constructor(
     private postagemService: PostagemService,
@@ -54,20 +54,20 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
-    /*if(environment.token == '') {
-      this.router.navigate(['/login']);
-
-    }*/
-
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
 
     }
 
-    this.findAllStorysSeguidores(this.idUsuarioLogado);
-    this.findAllPostagensSeguidores(this.idUsuarioLogado);
-    this.findAllByUsuarios();
-    this.imgUsuario();
+    if(this.idUsuarioLogado > 0) {
+      this.findAllStorysSeguidores(this.idUsuarioLogado);
+      this.findAllPostagensSeguidores(this.idUsuarioLogado);
+      this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
+
+    }else {
+      this.router.navigate(['/login']);
+
+    }
 
   }
 
@@ -104,17 +104,10 @@ export class IndexComponent implements OnInit {
 
   }
 
-  findAllByUsuarios() {
-    this.usuarioService.getAllByUsuarios().subscribe((resp: Usuario[]) => {
+  findAllUsuariosParaSeguir(id: number) {
+    this.listaDeUsuarios = [];
 
-      for(let i = 0; i < resp.length; i++) {
-        if(resp[i].img == null) {
-          resp[i].img = '../../assets/img/person_perfil_vazio.png';
-
-        }
-
-      }
-
+    this.usuarioService.getAllUsuariosParaSeguir(id).subscribe((resp: Usuario[]) => {
       this.listaDeUsuarios = resp;
 
     }, erro => {
@@ -202,14 +195,6 @@ export class IndexComponent implements OnInit {
 
   }
 
-  imgUsuario() {
-    if(this.img == null) {
-      this.img = '../../assets/img/person_perfil_vazio.png';
-
-    }
-
-  }
-
   seguirUsuario(idSeguindo: number, idSeguidor: number) {
     this.usuarioService.seguirUsuario(idSeguindo, idSeguidor).subscribe(() => {
 
@@ -218,6 +203,54 @@ export class IndexComponent implements OnInit {
         alert('Ocorreu um erro ao tentar seguir o usuario!!');
       }
     });
+
+    setTimeout(() => {
+      this.findAllStorysSeguidores(this.idUsuarioLogado);
+      this.findAllPostagensSeguidores(this.idUsuarioLogado);
+      this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
+
+    }, 1000);
+
+  }
+
+  disponibilizaEdicaoPerfil(id: number, idLoop: number) {
+    let trava: boolean = false;
+
+    if(id == idLoop) {
+      trava = true;
+
+    }else {
+      trava = false;
+
+    }
+
+    return trava;
+  }
+
+  ajustaLike(postagem: Postagem, idUsuario: number) {
+    let retorno: string = "";
+
+    postagem.likePostagem.map((p) => {
+      if(p.id == idUsuario) {
+        retorno = "preenche-like";
+      }
+
+    });
+
+    return retorno;
+  }
+
+  renderizaBotao(postagem: Postagem, idUsuario: number) {
+    let retorno: boolean = false;
+
+    postagem.likePostagem.map((p) => {
+      if(p.id == idUsuario) {
+        retorno = true;
+      }
+
+    });
+
+    return retorno;
   }
 
 }

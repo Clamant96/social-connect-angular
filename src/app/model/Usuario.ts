@@ -10,7 +10,7 @@ export class Usuario {
   public site: string;
   public senha: string;
   public biografia: string;
-  public postagens: Postagem;
+  public postagens: Postagem[];
   public like: Postagem[];
   public seguindo: Seguindo;
   public listaSeguindo: Seguindo[];

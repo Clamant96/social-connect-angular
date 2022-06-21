@@ -25,9 +25,9 @@ export class UsuarioService {
 
   ) { }
 
-  getAllByUsuarios() {
+  getAllUsuariosParaSeguir(id: number): Observable<Usuario[]> {
 
-    return this.http.get<Usuario[]>(`${this.url}/usuarios`, this.autorizacao);
+    return this.http.get<Usuario[]>(`${this.url}/usuarios/usuarios-para-seguidor/${id}`, this.autorizacao);
   }
 
   getByIdUsuario(id: number): Observable<Usuario> {
@@ -38,6 +38,11 @@ export class UsuarioService {
   getAllByUsernameUsuario(username: string) {
 
     return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${username}`, this.autorizacao);
+  }
+
+  getAllUsuariosSeguidos(id: number) {
+
+    return this.http.get<Usuario[]>(`${this.url}/usuarios/usuarios-seguidos/${id}`, this.autorizacao);
   }
 
   /* ENDPOINS SEGUINDO */

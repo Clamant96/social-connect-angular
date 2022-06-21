@@ -71,19 +71,6 @@ export class PerfilComponent implements OnInit {
     }else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
 
-
-        //alert('Usuario atualizado com sucesso!');
-
-        console.log(resp.id);
-        console.log(resp.nome);
-        console.log(resp.username);
-        console.log(resp.img);
-        console.log("Postagens: ");
-        console.log(resp.postagens);
-        console.log(resp.senha);
-        console.log(resp.site);
-        console.log(resp.biografia);
-
         this.usuario = resp;
 
         this.authService.logout();

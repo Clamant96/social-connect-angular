@@ -1,4 +1,3 @@
-import { Seguindo } from './../model/Seguindo';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostagemService } from './../service/postagem.service';
 import { UsuarioService } from './../service/usuario.service';
@@ -14,17 +13,19 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PerfilUsuarioComponent implements OnInit {
 
-  usuario: Usuario = new Usuario();
-  idUsuario: number;
-  totalPostagens: number;
-  totalSeguindo: number;
-  totalSeguidores: number;
+  public usuario: Usuario = new Usuario();
+  public idUsuario: number;
+  public totalPostagens: number;
+  public totalSeguindo: number;
+  public totalSeguidores: number;
 
-  postagem: Postagem = new Postagem();
-  usuarioPostagem: Usuario = new Usuario();
-  listaDePostagens: Postagem[];
+  public postagem: Postagem = new Postagem();
+  public usuarioPostagem: Usuario = new Usuario();
+  public listaDePostagens: Postagem[];
 
-  usuarioMensagensPostagem: Usuario[];
+  public usuarioMensagensPostagem: Usuario[];
+
+  public id: number = environment.id;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -36,11 +37,6 @@ export class PerfilUsuarioComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
-
-    /*if(environment.token == ''){
-      this.router.navigate(['/login']);
-
-    }*/
 
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
@@ -55,20 +51,12 @@ export class PerfilUsuarioComponent implements OnInit {
   findByIdUsuario(id: number) {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
 
-      if(resp.img == null) {
-        resp.img = '../../assets/img/person_perfil_vazio.png';
-
-      }
-
       this.usuario = resp;
 
-      /* CALCULA A LISTA DE USUARIO SEGUIDOS PELO USUARIO LOGADO */
-      this.totalSeguindo = this.usuario.listaSeguindo.length;
-
-      /* CALCULA A LISTA DE USUARIO QUE SEGUEM O USUARIO LOGADO */
-      this.listaDeSeguidores(id);
-
-      this.findByPostagensUsuario();
+      // CALCULA AS LISTAS DO USUARIO
+      this.totalSeguindo = resp.listaSeguindo.length;
+      this.totalSeguidores = resp.seguindo.listaDeSeguindo.length;
+      this.totalPostagens = resp.postagens.length;
 
     }, erro => {
       if(erro.status == 500 || erro.status == 400) {
@@ -80,60 +68,11 @@ export class PerfilUsuarioComponent implements OnInit {
 
   }
 
-  findByPostagensUsuario() {
-    this.postagemService.getAllByUsuarioPostagem(this.idUsuario).subscribe((resp: Postagem[]) => {
-      this.listaDePostagens = resp;
-
-      console.log(this.listaDePostagens);
-
-      this.totalPostagens = this.listaDePostagens.length;
-
-    }, erro => {
-      if(erro.status == 500 || erro.status == 400) {
-        //alert('Ocorreu um erro ao tentar carregar suas postagens!');
-
-        //this.logout();
-
-        //this.router.navigate(['/login']);
-
-        this.postagemService.getAllByPostagensUsuarios().subscribe((resp: Postagem[]) => {
-
-          let memoria = [];
-
-          for(let i = 0; i < resp.length; i++) {
-            if(resp[i].usuario.id == this.idUsuario) {
-              memoria.push(resp[i]);
-            }
-          }
-
-          this.listaDePostagens = memoria;
-
-          console.log(this.listaDePostagens);
-
-          this.totalPostagens = this.listaDePostagens.length;
-
-        });
-
-      }
-
-    });
-
-  }
-
   findByIdPostagem(id: number) {
     this.postagemService.getByIdPostagemUsuario(id).subscribe((resp: Postagem) => {
       this.postagem = resp;
 
-      this.usuarioService.getByIdUsuario(resp.usuario.id).subscribe((resp: Usuario) => {
-        this.usuarioPostagem = resp;
-
-      }, erro => {
-        if(erro.status == 500 || erro.status == 400) {
-          alert('Ocorreu um erro ao tentar vizualizar a postagem!');
-
-        }
-
-      });
+      this.usuarioPostagem = resp.usuario;
 
     }, erro => {
       if(erro.status == 500 || erro.status == 400) {
@@ -147,11 +86,18 @@ export class PerfilUsuarioComponent implements OnInit {
 
   }
 
-  listaDeSeguidores(id: number) {
-    this.usuarioService.getByIdSeguindo(id).subscribe((resp: Seguindo) => {
-      this.totalSeguidores = resp.listaDeSeguindo.length;
-    });
+  disponibilizaEdicaoPerfil(id: number, idLoop: number) {
+    let trava: boolean = false;
 
+    if(id == idLoop) {
+      trava = true;
+
+    }else {
+      trava = false;
+
+    }
+
+    return trava;
   }
 
 }
