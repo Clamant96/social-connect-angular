@@ -64,15 +64,15 @@ export class IndexComponent implements OnInit {
 
     }
 
-    this.findAllByStorys();
-    this.findAllByPostagensUsuarios();
+    this.findAllStorysSeguidores(this.idUsuarioLogado);
+    this.findAllPostagensSeguidores(this.idUsuarioLogado);
     this.findAllByUsuarios();
     this.imgUsuario();
 
   }
 
-  findAllByPostagensUsuarios() {
-    this.postagemService.getAllByPostagensUsuarios().subscribe((resp: Postagem[]) => {
+  findAllPostagensSeguidores(id: number) {
+    this.postagemService.getAllPostagensSeguidores(id).subscribe((resp: Postagem[]) => {
       this.listaDePostagens = resp;
 
     });
@@ -127,8 +127,8 @@ export class IndexComponent implements OnInit {
 
   }
 
-  findAllByStorys() {
-    this.storyService.getAllByStorys().subscribe((resp: Story[]) => {
+  findAllStorysSeguidores(id: number) {
+    this.storyService.getAllStorysSeguidores(id).subscribe((resp: Story[]) => {
       this.listaDeStorys = resp;
 
       try{
@@ -175,7 +175,7 @@ export class IndexComponent implements OnInit {
     this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
       this.mensagem = resp;
 
-      this.findAllByPostagensUsuarios();
+      this.findAllPostagensSeguidores(this.idUsuarioLogado);
 
       this.mensagem = new Mensagem();
 
@@ -191,7 +191,7 @@ export class IndexComponent implements OnInit {
 
   likePostagem(idUsuario: number, idPostagem: number) {
     this.postagemService.likePostagem(idUsuario, idPostagem).subscribe(() => {
-      this.findAllByPostagensUsuarios();
+      this.findAllPostagensSeguidores(this.idUsuarioLogado);
 
     });
 

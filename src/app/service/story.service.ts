@@ -28,6 +28,11 @@ export class StoryService {
     return this.http.get<Story[]>(`${this.url}/story`, this.autorizacao);
   }
 
+  getAllStorysSeguidores(id: number): Observable<Story[]> {
+
+    return this.http.get<Story[]>(`${this.url}/usuarios/storys-seguidores/${id}`, this.autorizacao);
+  }
+
   getByIdStory(id: number): Observable<Story> {
 
     return this.http.get<Story>(`${this.url}/story/${id}`, this.autorizacao);

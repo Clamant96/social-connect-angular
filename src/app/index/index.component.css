@@ -34,7 +34,7 @@ section .feed-noticias .header {
   margin-bottom: 2%;
   padding: 2%;
 
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid var(--border-gray);
 
   display: flex;
@@ -181,7 +181,7 @@ section .feed-noticias .feed .postagem-usuario {
   background-color: var(--background-section);
 
   border: 1px solid var(--border-gray);
-  border-radius: 3px;
+  border-radius: 10px;
 
 }
 

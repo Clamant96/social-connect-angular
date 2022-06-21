@@ -28,6 +28,11 @@ export class PostagemService {
     return this.http.get<Postagem[]>(`${this.url}/postagens`, this.autorizacao);
   }
 
+  getAllPostagensSeguidores(id: number): Observable<Postagem[]> {
+
+    return this.http.get<Postagem[]>(`${this.url}/usuarios/postagens-seguidores/${id}`, this.autorizacao);
+  }
+
   getByIdPostagemUsuario(id: number): Observable<Postagem> {
 
     return this.http.get<Postagem>(`${this.url}/postagens/${id}`, this.autorizacao);

@@ -38,7 +38,7 @@ header .header .itens-header h1 {
 }
 
 header .header .itens-header .pesquisa {
-  width: 15%;
+  width: 17%;
   height: auto;
 
 }
@@ -51,7 +51,9 @@ header .header .itens-header .pesquisa .input {
   background-color: var(--background-page);
 
   border: 1px solid var(--border-gray);
-  border-radius: 3px;
+  border-radius: 10px;
+
+  padding: 1%;
 
 }
 
@@ -272,7 +274,7 @@ header .header .itens-header .pesquisa .dropdown-content .usuario .dados-usuario
     background-color: var(--background-page);
 
     border: 1px solid var(--border-gray);
-    border-radius: 3px;
+    border-radius: 10px;
 
   }
 
