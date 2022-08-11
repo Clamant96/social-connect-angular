@@ -1,0 +1,21 @@
+<section class="container-fluid">
+  <div class="login">
+    <h1>Social Connect</h1>
+    <p class="esqueci-senha">Olá {{usuario.username}}, seja bem-vindo</p>
+    <div class="input">
+      <input (input)='confirmeSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+      <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua Senha">
+    </div>
+    <div class="botao">
+      <button type="submit" (click)='atualizar()'>Atualizar</button>
+    </div>
+    <div class="hr">
+      <hr />
+      <p>OU</p>
+      <hr />
+    </div>
+    <div class="login-cadastro">
+      <p>Já tem uma conta? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+</section>

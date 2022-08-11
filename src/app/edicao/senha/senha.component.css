@@ -1,0 +1,347 @@
+.container-fluid {
+  background-color: var(--background-page);
+
+  background-image: url(../../../assets/img/background_rede_social.jpg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+}
+
+.login {
+  width: 25% !important;
+  height: auto !important;
+
+  padding: 2.5%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--background-login);
+
+  border: 1px solid var(--border-gray);
+
+  box-shadow: 0px 3px 5px -3px var(--box-shadow);
+
+  border-radius: 5px;
+
+}
+
+.login h1 {
+  font-family: 'Lobster Two', cursive;
+  font-weight: 700;
+  font-size: 35px;
+
+  text-align: center;
+
+  margin-bottom: 10%;
+
+}
+
+.login .input {
+  width: 100%;
+  height: auto;
+
+}
+
+.login .input input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px !important;
+
+  border-radius: 2px !important;
+
+  margin: 2% 0%;
+  padding: 2.5%;
+
+  background-color: var(--background-page);
+
+}
+
+.login .input .esqueci-senha {
+  width: 100%;
+  height: auto;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 10px !important;
+
+}
+
+.login .input .esqueci-senha a {
+  text-decoration: none;
+
+  color: var(--color-text-black) !important;
+
+}
+
+.login .input .esqueci-senha a strong {
+  color: var(--color-like-postagem) !important;
+
+}
+
+.login .botao {
+  width: 100%;
+  height: auto;
+
+  margin-top: 5%;
+
+}
+
+.login .botao button {
+  width: 100%;
+  height: auto;
+
+  border: none;
+
+  border-radius: 3px;
+  border-color: var(--border-gray);
+
+  font-weight: 600;
+  font-size: 14px;
+
+  color: var(--color-text-white);
+
+  background-color: var(--background-button-blue);
+
+  padding: 1.5% 0%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+
+}
+
+.login .hr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
+
+  margin: 5% 0%;
+
+}
+
+.login .hr hr {
+  width: 100%;
+  height: 1.5px;
+
+  background-color: var(--color-text-gray);
+
+  border: 0px;
+
+}
+
+.login .hr p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px !important;
+
+  margin-bottom: 0;
+  margin: 0% 5%;
+
+  color: var(--color-text-gray);
+
+}
+
+.login .login-cadastro {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px !important;
+
+}
+
+.login .login-cadastro p {
+  color: var(--color-text-black) !important;
+
+}
+
+.login .login-cadastro p a {
+  text-decoration: none;
+
+  font-weight: 600;
+
+  color: var(--color-text-blue-text-link-2) !important;
+
+}
+
+@media(max-width: 760px) {
+  .container-fluid {
+    background-color: var(--background-page);
+
+    background-image: url(../../../assets/img/background_rede_social.jpg);
+    background-position: center;
+    background-size: 400%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+  }
+
+  .login {
+    width: 95% !important;
+    height: auto !important;
+
+    padding: 2.5%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--background-login);
+
+    border: 1px solid var(--border-gray);
+
+    box-shadow: 0px 3px 5px -3px var(--box-shadow);
+
+    border-radius: 5px;
+
+  }
+
+  .login h1 {
+    font-family: 'Lobster Two', cursive;
+    font-weight: 700;
+    font-size: 35px;
+
+    text-align: center;
+
+    margin-bottom: 10%;
+
+  }
+
+  .login .input {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .login .input input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px !important;
+
+    border-radius: 2px !important;
+
+    margin: 2% 0%;
+    padding: 2.5%;
+
+    background-color: var(--background-page);
+
+  }
+
+  .login .input .esqueci-senha {
+    width: 100%;
+    height: auto;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 10px !important;
+
+  }
+
+  .login .input .esqueci-senha a {
+    text-decoration: none;
+
+    color: var(--color-text-black) !important;
+
+  }
+
+  .login .botao {
+    width: 100%;
+    height: auto;
+
+    margin-top: 5%;
+
+  }
+
+  .login .botao button {
+    width: 100%;
+    height: auto;
+
+    border: none;
+
+    border-radius: 3px;
+    border-color: var(--border-gray);
+
+    font-weight: 600;
+    font-size: 14px;
+
+    color: var(--color-text-white);
+
+    background-color: var(--background-button-blue);
+
+    padding: 1.5% 0%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+
+  }
+
+  .login .hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    margin: 5% 0%;
+
+  }
+
+  .login .hr hr {
+    width: 100%;
+    height: 1.5px;
+
+    background-color: var(--color-text-gray);
+
+    border: 0px;
+
+  }
+
+  .login .hr p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px !important;
+
+    margin-bottom: 0;
+    margin: 0% 5%;
+
+    color: var(--color-text-gray);
+
+  }
+
+  .login .login-cadastro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px !important;
+
+  }
+
+  .login .login-cadastro p {
+    color: var(--color-text-black) !important;
+
+  }
+
+  .login .login-cadastro p a {
+    text-decoration: none;
+
+    font-weight: 600;
+
+    color: var(--color-text-blue-text-link-2) !important;
+
+  }
+
+}

@@ -1,0 +1,23 @@
+<section class="container-fluid">
+  <div class="login">
+    <h1>Social Connect</h1>
+    <div class="input">
+      <input [(ngModel)]='userLogin.username' class="form-control" type="text" name="usuario" id="usuario" placeholder="Nome de usuário">
+      <div class="esqueci-senha">
+        <a *ngIf="this.envioEmail && this.email != 'erro'" routerLink="">Senha enviada para: <strong>{{this.email}}</strong></a>
+        <a *ngIf="!this.envioEmail && this.email == 'erro'" routerLink="">Usuario não localizado!</a>
+      </div>
+    </div>
+    <div class="botao">
+      <button type="submit" (click)='pesquisar()'>Enviar</button>
+    </div>
+    <div class="hr">
+      <hr />
+      <p>OU</p>
+      <hr />
+    </div>
+    <div class="login-cadastro">
+      <p>Já tem uma conta? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+</section>

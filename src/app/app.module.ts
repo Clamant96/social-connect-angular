@@ -15,6 +15,8 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { PostagemComponent } from './postagem/postagem.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { StoryComponent } from './story/story.component';
+import { SenhaComponent } from './edicao/senha/senha.component';
+import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { StoryComponent } from './story/story.component';
     PerfilUsuarioComponent,
     PostagemComponent,
     StoryComponent,
-    EditarPostagemComponent
+    EditarPostagemComponent,
+    SenhaComponent,
+    AtualizarSenhaComponent
   ],
   imports: [
     BrowserModule,

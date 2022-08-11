@@ -7,5 +7,6 @@ export class UserLogin {
   public img: string;
   public biografia: string;
   public site: string;
+  public email: string;
 
 }

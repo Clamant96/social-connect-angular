@@ -56,4 +56,14 @@ export class UsuarioService {
     return this.http.get<Seguindo>(`${this.url}/seguindo/${id}`, this.autorizacao);
   }
 
+  getByUsernameUsuario(username: string): Observable<Usuario[]> {
+
+    return this.http.get<Usuario[]>(`${this.url}/usuarios/username/${username}`);
+  }
+
+  enviarEmail(usuario: Usuario): Observable<boolean> {
+
+    return this.http.post<boolean>(`${this.url}/usuarios/email`, usuario);
+  }
+
 }

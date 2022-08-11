@@ -15,5 +15,6 @@ export class Usuario {
   public seguindo: Seguindo;
   public listaSeguindo: Seguindo[];
   public storys: Story;
+  public email: string;
 
 }

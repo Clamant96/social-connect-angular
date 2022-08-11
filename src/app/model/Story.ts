@@ -4,5 +4,6 @@ export class Story {
   public id: number;
   public img: string;
   public usuario: Usuario;
+  public data: Date;
 
 }

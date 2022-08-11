@@ -126,7 +126,7 @@ export class IndexComponent implements OnInit {
 
       try{
         /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
-        this.listaDeStorys = this.listaDeStorys.filter((item, index, self) =>
+        this.listaDeStorys = resp.filter((item, index, self) =>
           index === self.findIndex((t) => (
             t.usuario.nome === item.usuario.nome
           ))
