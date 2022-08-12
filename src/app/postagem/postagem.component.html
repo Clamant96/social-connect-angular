@@ -4,7 +4,8 @@
       <img src="{{ postagem.img }}" alt="{{ postagem.descricao }}">
     </div>
     <div class="input">
-      <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem">
+      <!-- <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem"> -->
+      <app-imagem></app-imagem>
       <textarea [(ngModel)]='postagem.descricao' class="form-control" type="text" name="descricao" id="descricao" placeholder="Descrição"></textarea>
 
       <div class="botao">

@@ -17,6 +17,9 @@ export class ImagemComponent implements OnInit {
 
   selectedFile: ImageSnippet;
 
+  url: any;
+  msg: string = "";
+
   constructor(
     private imageService: PostagemService
 
@@ -42,6 +45,8 @@ export class ImagemComponent implements OnInit {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
+    this.viewFileImg(imageInput.files);
+
     reader.addEventListener('load', (event: any) => {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
@@ -59,5 +64,27 @@ export class ImagemComponent implements OnInit {
 
     reader.readAsDataURL(file);
   }
+
+  viewFileImg(file: any) { //Angular 11, for stricter type
+		if(!file[0] || file[0].length == 0) {
+			this.msg = 'You must select an image';
+			return;
+		}
+
+		var mimeType = file[0].type;
+
+		if (mimeType.match(/image\/*/) == null) {
+			this.msg = "Only images are supported";
+			return;
+		}
+
+		var reader = new FileReader();
+		reader.readAsDataURL(file[0]);
+
+		reader.onload = (_event) => {
+			this.msg = "";
+			this.url = reader.result;
+		}
+	}
 
 }

@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { Postagem } from './../model/Postagem';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -68,7 +68,14 @@ export class PostagemService {
     data.append('originalFilename', image.name);
     data.append('size', String(image.size));
 
+    environment.nomeUplaodImagem = image.name;
+
     return this.http.post<boolean>(`${this.url}/upload/`, data);
+  }
+
+  findImage(nomeImagem: string): Observable<File> {
+
+    return this.http.get<File>(`${this.url}/upload/files/${nomeImagem}`);
   }
 
 }

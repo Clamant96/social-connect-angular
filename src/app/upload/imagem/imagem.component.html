@@ -1,11 +1,11 @@
-<label class="image-upload-container btn btn-bwm">
-  <span>Select Image</span>
+<!--<label class="image-upload-container btn btn-bwm">-->
+<label>
+  <!--<span>Seleciona a imagem: </span>-->
   <input #imageInput
          type="file"
          accept="image/*"
          (change)="processFile(imageInput)">
 </label>
-
 
 <div *ngIf="selectedFile" class="img-preview-container">
 
@@ -17,6 +17,15 @@
     <div class="img-spinning-circle"></div>
   </div>
 
-  <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
-  <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+  <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success">
+    <div class="ajuste-imagem">
+      Imagem carregada com sucesso!
+
+      <div class="imagem-carregada" >
+        <img [src]="url" *ngIf="url" data-toggle="modal" data-target="#exampleModal" >
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Ocorreu um problema com o carregamento!</div>
 </div>

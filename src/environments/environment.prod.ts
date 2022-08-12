@@ -13,5 +13,6 @@ export const environment = {
   biografia: '',
   site: '',
   nomeSite: 'Social Connect',
-  email: ''
+  email: '',
+  nomeUplaodImagem: ''
 };
