@@ -17,6 +17,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { StoryComponent } from './story/story.component';
 import { SenhaComponent } from './edicao/senha/senha.component';
 import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
+import { ImagemComponent } from './upload/imagem/imagem.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senh
     StoryComponent,
     EditarPostagemComponent,
     SenhaComponent,
-    AtualizarSenhaComponent
+    AtualizarSenhaComponent,
+    ImagemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ImagemComponent } from './upload/imagem/imagem.component';
 import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
 import { SenhaComponent } from './edicao/senha/senha.component';
 import { StoryComponent } from './story/story.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'editar-postagem/:id', component: EditarPostagemComponent },
   { path: 'postagem', component: PostagemComponent },
   { path: 'story', component: StoryComponent },
-  { path: 'atualizar-senha/:id', component: AtualizarSenhaComponent }
+  { path: 'atualizar-senha/:id', component: AtualizarSenhaComponent },
+  { path: 'upload', component: ImagemComponent }
 ];
 
 @NgModule({

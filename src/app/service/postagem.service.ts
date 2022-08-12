@@ -58,4 +58,17 @@ export class PostagemService {
     return this.http.put<Postagem>(`${this.url}/postagens/likes_usuario_postagem/likePostagem/${idPostagem}/like/${idUsuario}`, this.autorizacao);
   }
 
+  uploadImage(image: File): Observable<boolean> {
+    const data: FormData = new FormData();
+    data.append('type', image.type);
+    data.append('file', image);
+    data.append('contentType', image);
+    data.append('empty', String(false));
+    data.append('name', image.name);
+    data.append('originalFilename', image.name);
+    data.append('size', String(image.size));
+
+    return this.http.post<boolean>(`${this.url}/upload/`, data);
+  }
+
 }
