@@ -27,6 +27,8 @@ export class PerfilUsuarioComponent implements OnInit {
 
   public id: number = environment.id;
 
+  public url: string = `${environment.service}${environment.port}`;
+
   constructor(
     private usuarioService: UsuarioService,
     private postagemService: PostagemService,

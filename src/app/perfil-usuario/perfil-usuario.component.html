@@ -34,7 +34,7 @@
   <hr />
 
   <div class="postagens" >
-    <div class="post" *ngFor='let minhasPostagens of this.usuario.postagens' style="background-image: url( '{{ minhasPostagens.img }}' );" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findByIdPostagem(minhasPostagens.id)" >
+    <div class="post" *ngFor='let minhasPostagens of this.usuario.postagens' style="background-image: url( '{{url}}/image/carregar/{{this.usuario.username}}/{{minhasPostagens.img}}' );" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findByIdPostagem(minhasPostagens.id)" >
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,7 +42,8 @@
 
           <div class="vizualizar-postagem">
             <div class="img">
-              <img src="{{ postagem.img }}" alt="{{ usuarioPostagem.username }}">
+              <!-- <img src="{{ postagem.img }}" alt="{{ usuarioPostagem.username }}"> -->
+              <img src="{{url}}/image/carregar/{{this.usuario.username}}/{{postagem.img}}" alt="{{url}}/image/carregar/{{this.usuario.username}}/{{postagem.img}}" />
             </div>
             <div class="dados-postagem">
               <div class="dados-usuario-postagem">
