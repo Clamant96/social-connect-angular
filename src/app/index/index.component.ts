@@ -74,12 +74,22 @@ export class IndexComponent implements OnInit {
 
   }
 
-  carregaImagem() {
+  carregaImagem(username: string, img: string) {
 
-    this.postagemService.findImage("clmkevin","417649605.jpg").subscribe((resp: File) => {
-      return resp;
-    });
+    if(username == null || username == '' || img == null || img == '') {
+      return '';
+    }
 
+    return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
+  carregaImagemStory(img: string) {
+
+    if(img == null || img == '') {
+      return '';
+    }
+
+    return `${this.url}/image/carregar/${img}`;
   }
 
   findAllPostagensSeguidores(id: number) {

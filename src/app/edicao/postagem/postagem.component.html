@@ -2,7 +2,8 @@
   <div class="postagem">
     <div class="img-postagem">
       <!-- <img src="{{ postagem.img }}" alt="{{ postagem.descricao }}"> -->
-      <img src="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" alt="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" />
+      <!-- <img src="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" alt="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" /> -->
+      <img src="{{carregaImagem(postagem.usuario.username, postagem.img)}}" alt="{{carregaImagem(postagem.usuario.username, postagem.img)}}" />
     </div>
     <div class="input">
       <!-- <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem"> -->

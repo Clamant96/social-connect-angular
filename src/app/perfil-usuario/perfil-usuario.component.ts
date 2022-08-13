@@ -50,6 +50,15 @@ export class PerfilUsuarioComponent implements OnInit {
 
   }
 
+  carregaImagem(username: string, img: string) {
+
+    if(username == null || username == '' || img == null || img == '') {
+      return '';
+    }
+
+    return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
   findByIdUsuario(id: number) {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
 

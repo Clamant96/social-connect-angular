@@ -38,6 +38,15 @@ export class EditarPostagemComponent implements OnInit {
 
   }
 
+  carregaImagem(username: string, img: string) {
+
+    if(username == null || username == '' || img == null || img == '') {
+      return '';
+    }
+
+    return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
   findByIdPostagem(id: number) {
     this.postagemService.getByIdPostagemUsuario(id).subscribe((resp: Postagem) => {
       this.postagem = resp;
@@ -61,6 +70,17 @@ export class EditarPostagemComponent implements OnInit {
 
     });
 
+  }
+
+  deletaImagemAntiga(nomeArquivo: string) {
+    let retorno: boolean = false;
+
+    this.postagemService.deletaImagemSubstituida(nomeArquivo).subscribe((resp: boolean) => {
+      retorno = resp;
+
+    });
+
+    return retorno;
   }
 
 }

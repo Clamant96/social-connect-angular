@@ -92,4 +92,9 @@ export class PostagemService {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  deletaImagemSubstituida(nomeArquivo: string): Observable<boolean> {
+
+    return this.http.delete<boolean>(`${this.url}/upload/${environment.username}/nomeArquivo/${nomeArquivo}`, this.autorizacao);
+  }
+
 }
