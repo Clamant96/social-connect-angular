@@ -60,15 +60,16 @@ export class PostagemService {
 
   uploadImage(image: File): Observable<boolean> {
     const data: FormData = new FormData();
+
     data.append('type', image.type);
     data.append('file', image);
     data.append('contentType', image);
     data.append('empty', String(false));
-    data.append('name', image.name);
-    data.append('originalFilename', image.name);
+    data.append('name', `${environment.username}/${image.name}`);
+    data.append('originalFilename', `${environment.username}/${image.name}`);
     data.append('size', String(image.size));
 
-    environment.nomeUplaodImagem = image.name;
+    environment.nomeUplaodImagem = `${environment.username}/${image.name}`;
 
     return this.http.post<boolean>(`${this.url}/upload/`, data);
   }
