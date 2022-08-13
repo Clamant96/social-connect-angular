@@ -56,6 +56,7 @@ export class ImagemComponent implements OnInit {
       this.imageService.uploadImage(this.selectedFile.file).subscribe(
         (res) => {
           this.onSuccess();
+          console.log(res);
         },
         (err) => {
           this.onError();

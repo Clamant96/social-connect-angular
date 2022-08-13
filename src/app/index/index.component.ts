@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Story } from './../model/Story';
 import { StoryService } from './../service/story.service';
 import { AuthService } from './../service/auth.service';
@@ -41,6 +42,8 @@ export class IndexComponent implements OnInit {
   public key = 'data';
   public reverse = true;
 
+  public url: string = `${environment.service}${environment.port}`;
+
   constructor(
     private postagemService: PostagemService,
     private mensagemService: MensagemService,
@@ -68,6 +71,14 @@ export class IndexComponent implements OnInit {
       this.router.navigate(['/login']);
 
     }
+
+  }
+
+  carregaImagem() {
+
+    this.postagemService.findImage("clmkevin","417649605.jpg").subscribe((resp: File) => {
+      return resp;
+    });
 
   }
 

@@ -3,6 +3,7 @@ import { Postagem } from './../../model/Postagem';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PostagemService } from './../../service/postagem.service';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-postagem',
@@ -14,6 +15,8 @@ export class EditarPostagemComponent implements OnInit {
   public postagem: Postagem = new Postagem();
 
   public id: number = 0;
+
+  public url: string = `${environment.service}${environment.port}`;
 
   constructor(
     private postagemService: PostagemService,

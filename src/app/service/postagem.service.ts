@@ -45,10 +45,14 @@ export class PostagemService {
 
   postPostagemUsuario(postagem: Postagem): Observable<Postagem> {
 
+    postagem.img = environment.nomeUplaodImagem;
+
     return this.http.post<Postagem>(`${this.url}/postagens`, postagem, this.autorizacao);
   }
 
   putPostagemUsuario(postagem: Postagem): Observable<Postagem> {
+
+    postagem.img = environment.nomeUplaodImagem;
 
     return this.http.put<Postagem>(`${this.url}/postagens`, postagem, this.autorizacao);
   }
@@ -69,14 +73,23 @@ export class PostagemService {
     data.append('originalFilename', `${environment.username}/${image.name}`);
     data.append('size', String(image.size));
 
-    environment.nomeUplaodImagem = `${environment.username}/${image.name}`;
+    let nomeArquivo: string = String(this.getRandomInt(100000000, 999999999));
 
-    return this.http.post<boolean>(`${this.url}/upload/`, data);
+    environment.nomeUplaodImagem = `${nomeArquivo}.${image.name.split(".")[1]}`;
+
+    return this.http.post<boolean>(`${this.url}/upload/${environment.username}/nomeArquivo/${nomeArquivo}`, data);
   }
 
-  findImage(nomeImagem: string): Observable<File> {
+  findImage(nomeUsuario: string, nomeImagem: string): Observable<File> {
 
-    return this.http.get<File>(`${this.url}/upload/files/${nomeImagem}`);
+    return this.http.get<File>(`${this.url}/image/carregar/${nomeUsuario}/${nomeImagem}`);
+  }
+
+  getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
 }

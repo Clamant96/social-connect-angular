@@ -17,6 +17,8 @@ export class PostagemComponent implements OnInit {
   public id = environment.id;
   public usuario: Usuario = new Usuario();
 
+  public url: string = `${environment.service}${environment.port}`;
+
   constructor(
     private postagemService: PostagemService,
     private router: Router,

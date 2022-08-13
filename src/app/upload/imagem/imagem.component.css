@@ -37,8 +37,6 @@ label input {
   transform: translate(-50%, -50%);
   margin: 0 auto;
 
-  background-color: antiquewhite;
-
 }
 
 .img-preview-container .alert .ajuste-imagem .imagem-carregada img {

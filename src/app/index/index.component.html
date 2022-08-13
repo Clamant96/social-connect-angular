@@ -24,7 +24,7 @@
               <div class="modal-storys">
                 <span onclick="document.getElementById('gerenciar-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <div class="img-story" *ngFor='let foto of usuarioStorys.storys | orderBy: key: reverse' >
-                  <div class="img-s" style='background-image: url({{foto.img}});'></div>
+                  <div class="img-s" style='background-image: url({{url}}/image/carregar/{{foto.img}});'></div>
                 </div>
               </div>
             </div>
@@ -41,14 +41,15 @@
             <img src="{{ postagem.usuario.img }}" alt="{{ postagem.usuario.username }}" />
           </div>
           <p>{{ postagem.usuario.username }}</p>
-          <div *ngIf="disponibilizaEdicaoPerfil(this.idUsuarioLogado, postagem.usuario.id)" class="icon" [routerLink]="['/editar-postagem/', postagem.usuario.id]" >
+          <div *ngIf="disponibilizaEdicaoPerfil(this.idUsuarioLogado, postagem.usuario.id)" class="icon" [routerLink]="['/editar-postagem/', postagem.id]" >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
               <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
             </svg>
           </div>
         </div>
         <div class="img-postagem" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findByIdPostagem(postagem.id)" >
-          <img src="{{ postagem.img }}" alt="{{ postagem.usuario.username }}">
+          <!-- <img src="{{ postagem.img }}" alt="{{ postagem.usuario.username }}"> -->
+          <img src="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" alt="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" />
         </div>
 
         <!-- Modal -->
@@ -57,7 +58,8 @@
 
             <div class="vizualizar-postagem">
               <div class="img">
-                <img src="{{ minhasPostagens.img }}" alt="{{ usuarioPostagem.username }}">
+                <!-- <img src="{{ minhasPostagens.img }}" alt="{{ usuarioPostagem.username }}"> -->
+                <img src="{{url}}/image/carregar/{{usuarioPostagem.username}}/{{minhasPostagens.img}}" alt="{{url}}/image/carregar/{{usuarioPostagem.username}}/{{minhasPostagens.img}}" />
               </div>
               <div class="dados-postagem">
                 <div class="dados-usuario-postagem">

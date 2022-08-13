@@ -1,14 +1,16 @@
 <section class="container-fluid">
   <div class="postagem">
     <div class="img-postagem">
-      <img src="{{ postagem.img }}" alt="{{ postagem.descricao }}">
+      <!-- <img src="{{ postagem.img }}" alt="{{ postagem.descricao }}"> -->
+      <img src="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" alt="{{url}}/image/carregar/{{postagem.usuario.username}}/{{postagem.img}}" />
     </div>
     <div class="input">
-      <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem">
+      <!-- <input [(ngModel)]='postagem.img' class="form-control" type="text" name="img" id="img" placeholder="URL da imagem"> -->
+      <app-imagem></app-imagem>
       <textarea [(ngModel)]='postagem.descricao' class="form-control" type="text" name="descricao" id="descricao" placeholder="Descrição"></textarea>
 
       <div class="botao">
-        <button type="submit" (click)='putPostagem()'>Pulicar</button>
+        <button type="submit" (click)='putPostagem()'>Atualizar</button>
       </div>
 
     </div>
