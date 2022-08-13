@@ -158,7 +158,8 @@
         <div class="dados-meu-perfil" *ngFor='let user of listaDeUsuarios' >
           <div *ngIf='user.id != idUsuarioLogado' class="meu-perfil">
             <div class="img">
-              <img src="{{ user.img }}" alt="{{ user.username }}">
+              <!-- <img src="{{ user.img }}" alt="{{ user.username }}"> -->
+              <img src="{{carregaImagem(user.username, user.img)}}" alt="{{carregaImagem(user.username, user.img)}}" />
             </div>
             <div class="dados-usuario">
               <a [routerLink]="['/perfil', user.id]" >{{ user.username }}</a>
