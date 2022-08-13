@@ -1,7 +1,8 @@
 <section>
   <div class="bloco-perfil">
     <div class="img">
-      <img src="{{  usuario.img }}" alt="{{ usuario.username }}">
+      <!-- <img src="{{  usuario.img }}" alt="{{ usuario.username }}"> -->
+      <img src="{{carregaImagem(usuario.username, usuario.img)}}" alt="{{carregaImagem(usuario.username, usuario.img)}}" />
     </div>
     <div class="dados-perfil">
       <div class="nome-perfil">
@@ -50,7 +51,8 @@
             <div class="dados-postagem">
               <div class="dados-usuario-postagem">
                 <div class="img">
-                  <img src="{{ usuarioPostagem.img }}" alt="{{ usuarioPostagem.username }}">
+                  <!-- <img src="{{ usuarioPostagem.img }}" alt="{{ usuarioPostagem.username }}"> -->
+                  <img src="{{carregaImagem(usuarioPostagem.username, usuarioPostagem.img)}}" alt="{{carregaImagem(usuarioPostagem.username, usuarioPostagem.img)}}" />
                 </div>
                 <h5>{{ usuarioPostagem.username }}</h5>
               </div>

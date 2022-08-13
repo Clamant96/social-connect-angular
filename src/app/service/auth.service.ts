@@ -38,6 +38,8 @@ export class AuthService {
 
   atualizar(atualizacao: Usuario): Observable<Usuario> {
 
+    atualizacao.img = environment.nomeUplaodImagem;
+
     return this.http.put<Usuario>(`${this.url}/usuarios/atualizar`, atualizacao);
   }
 

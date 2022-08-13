@@ -80,6 +80,11 @@ export class IndexComponent implements OnInit {
       return '';
     }
 
+    if(img.includes("person_perfil_vazio")) {
+
+      return img;
+    }
+
     return `${this.url}/image/carregar/${username}/${img}`;
   }
 
@@ -87,6 +92,11 @@ export class IndexComponent implements OnInit {
 
     if(img == null || img == '') {
       return '';
+    }
+
+    if(img.includes("person_perfil_vazio")) {
+
+      return img;
     }
 
     return `${this.url}/image/carregar/${img}`;

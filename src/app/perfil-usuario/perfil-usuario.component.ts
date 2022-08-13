@@ -56,6 +56,11 @@ export class PerfilUsuarioComponent implements OnInit {
       return '';
     }
 
+    if(img.includes("person_perfil_vazio")) {
+
+      return img;
+    }
+
     return `${this.url}/image/carregar/${username}/${img}`;
   }
 

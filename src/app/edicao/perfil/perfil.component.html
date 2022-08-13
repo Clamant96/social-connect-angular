@@ -5,7 +5,8 @@
   <div class="dados-usuario">
     <div class="perfil-img-username-usuario">
       <div class="img">
-        <img src="{{ usuario.img }}" alt="{{ usuario.username }}">
+        <!-- <img src="{{ usuario.img }}" alt="{{ usuario.username }}"> -->
+        <img src="{{carregaImagem(usuario.username, usuario.img)}}" alt="{{carregaImagem(usuario.username, usuario.img)}}" />
       </div>
       <h5>{{ usuario.username }}</h5>
     </div>
@@ -22,10 +23,10 @@
         <label for="username">Username</label>
         <input [(ngModel)]='usuario.username' type="text" name="username" id="username" placeholder="Username" disabled >
       </div>
-      <div class="input">
+      <!-- <div class="input">
         <label for="img">Img Perfil</label>
         <input [(ngModel)]='usuario.img' type="text" name="img" id="img" placeholder="Imagem de perfil">
-      </div>
+      </div> -->
       <div class="input">
         <label for="site">Site</label>
         <input [(ngModel)]='usuario.site' type="text" name="site" id="site" placeholder="Site">
@@ -33,6 +34,9 @@
       <div class="input">
         <label for="bio">Biografia</label>
         <textarea type="text" [(ngModel)]='usuario.biografia' name="bio" id="bio" placeholder="Minha biografia..."></textarea>
+      </div>
+      <div class="input">
+        <app-imagem></app-imagem>
       </div>
       <div class="input">
         <label for="senha">Senha</label>

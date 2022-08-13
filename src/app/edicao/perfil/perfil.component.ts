@@ -18,6 +18,8 @@ export class PerfilComponent implements OnInit {
   idUsuario: number;
   confirmarSenha: string;
 
+  public url: string = `${environment.service}${environment.port}`;
+
   constructor(
     private usuarioService: UsuarioService,
     private authService: AuthService,
@@ -43,6 +45,20 @@ export class PerfilComponent implements OnInit {
 
     this.findByIdUsuario(this.idUsuario);
 
+  }
+
+  carregaImagem(username: string, img: string) {
+
+    if(username == null || username == '' || img == null || img == '') {
+      return '';
+    }
+
+    if(img.includes("person_perfil_vazio")) {
+
+      return img;
+    }
+
+    return `${this.url}/image/carregar/${username}/${img}`;
   }
 
   findByIdUsuario(id: number) {

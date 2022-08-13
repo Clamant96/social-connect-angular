@@ -13,7 +13,8 @@
         </div>
         <div class="dropdown-content" (click)="ajustarDropDown()" >
           <div class="usuario" *ngFor='let user of listaUsuario' >
-            <img src="{{ user.img }}" alt="{{ user.username }}">
+            <!-- <img src="{{ user.img }}" alt="{{ user.username }}"> -->
+            <img src="{{carregaImagem(user.username, user.img)}}" alt="{{carregaImagem(user.username, user.img)}}" />
             <div class="dados-usuario">
               <a [routerLink]="['/perfil', user.id]" >{{ user.username }}</a>
               <p>{{ user.nome }}</p>
@@ -42,7 +43,8 @@
             <p class="fechar" (click)="ocultaListaSeguidores()">Fechar</p>
             <div class="instagram"></div>
             <div class="usuario" *ngFor='let usuario of this.listaUsuariosSeguidos' >
-              <img src="{{usuario.img}}" alt="{{usuario.username}}">
+              <!-- <img src="{{usuario.img}}" alt="{{usuario.username}}"> -->
+              <img src="{{carregaImagem(usuario.username, usuario.img)}}" alt="{{carregaImagem(usuario.username, usuario.img)}}" />
               <div class="dados-usuario">
                 <a [routerLink]="['/perfil', usuario.id]" >{{ usuario.username }}</a>
                 <p>{{ usuario.nome }}</p>
@@ -54,7 +56,8 @@
         </a>
         <!-- IMG PERFIL -->
         <a [routerLink]="[defineUrlPerfilUsuarioLogado(), idUsuario]" class="img-perfil">
-          <img src="{{ img }}" alt="{{ usarname }}" />
+          <!-- <img src="{{ img }}" alt="{{ usarname }}" /> -->
+          <img src="{{carregaImagem(usarname, img)}}" alt="{{carregaImagem(usarname, img)}}" />
         </a>
       </div>
 

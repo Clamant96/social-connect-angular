@@ -28,6 +28,8 @@ export class HeaderComponent implements OnInit {
 
   public postagem: Postagem = new Postagem();
 
+  public url: string = `${environment.service}${environment.port}`;
+
   constructor(
     private authService: AuthService,
     private usuarioService: UsuarioService,
@@ -40,6 +42,20 @@ export class HeaderComponent implements OnInit {
 
     this.imgUsuario();
 
+  }
+
+  carregaImagem(username: string, img: string) {
+
+    if(username == null || username == '' || img == null || img == '') {
+      return '';
+    }
+
+    if(img.includes("person_perfil_vazio")) {
+
+      return img;
+    }
+
+    return `${this.url}/image/carregar/${username}/${img}`;
   }
 
   minhaPesquisa(event: any) {

@@ -3,7 +3,8 @@
     <div class="header">
       <div class="histories-usuario" routerLink="/story" >
         <div class="img retirar-borda">
-          <img src="{{ img }}" alt="{{ username }}">
+          <!-- <img src="{{ img }}" alt="{{ username }}"> -->
+          <img src="{{carregaImagem(username,img)}}" alt="{{carregaImagem(username,img)}}" />
         </div>
         <p>{{ username }}</p>
         <div class="icon-adicionar-stories">
@@ -14,7 +15,8 @@
       </div>
       <div *ngFor='let story of listaDeStorys' class="histories-usuario">
         <div class="img instagram retirar-borda" (click)='findByIdUsuario(story.usuario.id)' >
-          <img src="{{ story.usuario.img }}" alt="{{ story.usuario.username }}" >
+          <!-- <img src="{{ story.usuario.img }}" alt="{{ story.usuario.username }}" > -->
+          <img src="{{carregaImagem(story.usuario.username, story.usuario.img)}}" alt="{{carregaImagem(story.usuario.username, story.usuario.img)}}" />
         </div>
         <p>{{ story.usuario.username }}</p>
 
@@ -39,7 +41,8 @@
 
         <div class="header">
           <div class="img">
-            <img src="{{ postagem.usuario.img }}" alt="{{ postagem.usuario.username }}" />
+            <!-- <img src="{{ postagem.usuario.img }}" alt="{{ postagem.usuario.username }}" /> -->
+            <img src="{{carregaImagem(postagem.usuario.username, postagem.usuario.img)}}" alt="{{carregaImagem(postagem.usuario.username, postagem.usuario.img)}}" />
           </div>
           <p>{{ postagem.usuario.username }}</p>
           <div *ngIf="disponibilizaEdicaoPerfil(this.idUsuarioLogado, postagem.usuario.id)" class="icon" [routerLink]="['/editar-postagem/', postagem.id]" >
@@ -67,7 +70,8 @@
               <div class="dados-postagem">
                 <div class="dados-usuario-postagem">
                   <div class="img">
-                    <img src="{{ usuarioPostagem.img }}" >
+                    <!-- <img src="{{ usuarioPostagem.img }}" > -->
+                    <img src="{{carregaImagem(usuarioPostagem.username, usuarioPostagem.img)}}" alt="{{carregaImagem(usuarioPostagem.username, usuarioPostagem.img)}}" />
                   </div>
                   <h5>{{ usuarioPostagem.username }}</h5>
                 </div>
@@ -137,7 +141,8 @@
       <div class="dados-meu-perfil">
         <div class="meu-perfil">
           <a [routerLink]="['/perfil', idUsuarioLogado]" class="img">
-            <img src="{{ img }}" alt="{{ username }}">
+            <!-- <img src="{{ img }}" alt="{{ username }}"> -->
+            <img src="{{carregaImagem(username, img)}}" alt="{{carregaImagem(username, img)}}" />
           </a>
           <div class="dados-usuario">
             <h5 [routerLink]="['/perfil', idUsuarioLogado]" >{{ username }}</h5>
