@@ -155,6 +155,14 @@ export class IndexComponent implements OnInit {
     this.storyService.getAllStorysSeguidores(id).subscribe((resp: Story[]) => {
       this.listaDeStorys = resp;
 
+      /*
+        var resultProductData = product_data.filter(a => {
+          var date = new Date(a.ProductHits);
+          return (date >= startDate && date <= endDate);
+        });
+        console.log(resultProductData)
+      */
+
       try{
         /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
         this.listaDeStorys = resp.filter((item, index, self) =>
