@@ -14,11 +14,11 @@
         </div>
       </div>
       <div *ngFor='let story of listaDeStorys' class="histories-usuario">
-        <div class="img instagram retirar-borda" (click)='findByIdUsuario(story.usuario.id)' >
+        <div *ngIf="validaData(story.data)" class="img instagram retirar-borda" (click)='findByIdUsuario(story.usuario.id)' >
           <!-- <img src="{{ story.usuario.img }}" alt="{{ story.usuario.username }}" > -->
           <img src="{{carregaImagem(story.usuario.username, story.usuario.img)}}" alt="{{carregaImagem(story.usuario.username, story.usuario.img)}}" />
         </div>
-        <p>{{ story.usuario.username }}</p>
+        <p *ngIf="validaData(story.data)" >{{ story.usuario.username }}</p>
 
         <div class="w3-container">
           <div id="gerenciar-modal" class="w3-modal">

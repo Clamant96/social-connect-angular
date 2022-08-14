@@ -74,6 +74,25 @@ export class IndexComponent implements OnInit {
 
   }
 
+  validaData(dataStory: Date) {
+
+    const dataAtual = new Date().toLocaleDateString();
+
+    const conversaoDataStory = new Date(dataStory).toLocaleDateString('en-US');
+
+    console.log("dataStory: "+ conversaoDataStory);
+    console.log("dataAtual: "+ dataAtual);
+
+    if(conversaoDataStory == dataAtual ) {
+
+      return true;
+    }else {
+
+      return false;
+    }
+
+  }
+
   carregaImagem(username: string, img: string) {
 
     if(username == null || username == '' || img == null || img == '') {
