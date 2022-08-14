@@ -111,6 +111,8 @@ export class IndexComponent implements OnInit {
   }
 
   findByIdPostagem(id: number) {
+    this.usuarioPostagem = new Usuario();
+
     this.postagemService.getByIdPostagemUsuario(id).subscribe((resp: Postagem) => {
       this.minhasPostagens = resp;
 
@@ -186,7 +188,7 @@ export class IndexComponent implements OnInit {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuarioStorys = resp;
 
-      console.log(this.usuarioStorys);
+      // console.log(this.usuarioStorys);
 
     }, erro => {
       if(erro.status == 500 || erro.status == 400) {
@@ -207,7 +209,22 @@ export class IndexComponent implements OnInit {
     this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
       this.mensagem = resp;
 
-      this.findAllPostagensSeguidores(this.idUsuarioLogado);
+      // this.findAllPostagensSeguidores(this.idUsuarioLogado);
+
+      this.listaDePostagens.map((item) => {
+
+        if(item.id == idPostagem) {
+
+          this.postagemService.getByIdPostagemUsuario(idPostagem).subscribe((resp: Postagem) => {
+            item.mensagens = resp.mensagens;
+
+            // console.log(item.likePostagem);
+
+          });
+
+        }
+
+      });
 
       this.mensagem = new Mensagem();
 
@@ -223,7 +240,22 @@ export class IndexComponent implements OnInit {
 
   likePostagem(idUsuario: number, idPostagem: number) {
     this.postagemService.likePostagem(idUsuario, idPostagem).subscribe(() => {
-      this.findAllPostagensSeguidores(this.idUsuarioLogado);
+      // this.findAllPostagensSeguidores(this.idUsuarioLogado);
+
+      this.listaDePostagens.map((item) => {
+
+        if(item.id == idPostagem) {
+
+          this.postagemService.getByIdPostagemUsuario(idPostagem).subscribe((resp: Postagem) => {
+            item.likePostagem = resp.likePostagem;
+
+            // console.log(item.likePostagem);
+
+          });
+
+        }
+
+      });
 
     });
 

@@ -40,10 +40,14 @@ export class StoryService {
 
   postStory(story: Story): Observable<Story> {
 
+    story.img = `${environment.username}/${environment.nomeUplaodImagem}`;
+
     return this.http.post<Story>(`${this.url}/story`, story, this.autorizacao);
   }
 
   putStory(story: Story): Observable<Story> {
+
+    story.img = `${environment.username}/${environment.nomeUplaodImagem}`;
 
     return this.http.put<Story>(`${this.url}/story`, story, this.autorizacao);
   }
