@@ -1,3 +1,4 @@
+import { UtilService } from './../../service/util.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mensagem } from 'src/app/model/Mensagem';
@@ -32,6 +33,7 @@ export class PostComponent implements OnInit {
     private postagemService: PostagemService,
     private usuarioService: UsuarioService,
     private mensagemService: MensagemService,
+    public utilService: UtilService,
 
     ) { }
 
@@ -43,69 +45,6 @@ export class PostComponent implements OnInit {
 
     }
 
-  }
-
-  ajustaLike(postagem: Postagem, idUsuario: number) {
-    let retorno: string = "";
-
-    postagem.likePostagem.map((p) => {
-      if(p.id == idUsuario) {
-        retorno = "preenche-like";
-      }
-
-    });
-
-    return retorno;
-  }
-
-  renderizaBotao(postagem: Postagem, idUsuario: number) {
-    let retorno: boolean = false;
-
-    postagem.likePostagem.map((p) => {
-      if(p.id == idUsuario) {
-        retorno = true;
-      }
-
-    });
-
-    return retorno;
-  }
-
-  disponibilizaEdicaoPerfil(id: number, idLoop: number) {
-    let trava: boolean = false;
-
-    if(id == idLoop) {
-      trava = true;
-
-    }else {
-      trava = false;
-
-    }
-
-    return trava;
-  }
-
-  carregaImagem(username: string, img: string) {
-
-    if(username == null || username == '' || img == null || img == '') {
-      return '';
-    }
-
-    if(img.includes("person_perfil_vazio")) {
-
-      return img;
-    }
-
-    // BASE 64
-    username = this.encodeBytesToBase64(username);
-    img = this.encodeBytesToBase64(img);
-
-    return `${this.url}/image/carregar/${username}/${img}`;
-  }
-
-  encodeBytesToBase64(bytes: string) {
-    const binString = btoa(bytes);
-    return btoa(binString);
   }
 
   findByIdPostagem(id: number) {

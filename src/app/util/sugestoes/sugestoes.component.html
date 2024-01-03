@@ -1,0 +1,33 @@
+<div class="sugestoes-perfil">
+  <div class="dados-meu-perfil">
+    <div class="meu-perfil">
+      <a [routerLink]="['/perfil', idUsuarioLogado]" class="img">
+        <img src="{{this.utilService.carregaImagem(username, img)}}" alt="{{this.utilService.carregaImagem(username, img)}}" />
+      </a>
+      <div class="dados-usuario">
+        <h5 [routerLink]="['/perfil', idUsuarioLogado]" >{{ username }}</h5>
+        <p>{{ nome }}</p>
+      </div>
+    </div>
+    <button type="button" (click)="this.utilService.logoutUsuario()" >
+      Mudar
+    </button>
+  </div>
+  <div class="sugestoes-perfil-usuarios">
+    <h5>Sugestões para você</h5>
+    <div class="dados-meu-perfil" *ngFor='let user of listaDeUsuarios' >
+      <div *ngIf='user.id != idUsuarioLogado' class="meu-perfil">
+        <div class="img">
+          <img src="{{this.utilService.carregaImagem(user.username, user.img)}}" alt="{{this.utilService.carregaImagem(user.username, user.img)}}" />
+        </div>
+        <div class="dados-usuario">
+          <a [routerLink]="['/perfil', user.id]" >{{ user.username }}</a>
+          <p>{{ user.nome }}</p>
+        </div>
+      </div>
+      <button *ngIf='user.id != idUsuarioLogado' type="button" (click)='seguirUsuario(user.id, idUsuarioLogado)' >
+        Seguir
+      </button>
+    </div>
+  </div>
+</div>

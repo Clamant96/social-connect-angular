@@ -1,0 +1,415 @@
+.sugestoes-perfil {
+  width: 25%;
+  height: auto;
+
+  margin: 0% 1%;
+
+  position: fixed;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil {
+  width: 100%;
+  height: auto;
+
+  margin-top: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil {
+  width: 80%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 80%;
+  height: auto;
+
+  padding: 2%;
+  margin-left: 5%;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario h5 {
+  font-weight: 600;
+  font-size: 14px;
+
+  margin-right: 1% !important;
+  margin: 0;
+
+  color: var(--color-text-black);
+
+  cursor: pointer;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario p {
+  font-weight: 400;
+  font-size: 14px;
+
+  margin: 0;
+
+  color: var(--color-text-gray);
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil .img {
+  width: 20%;
+  height: auto;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil .meu-perfil .img img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+.sugestoes-perfil .dados-meu-perfil button {
+  border: none;
+
+  background-color: transparent;
+
+  color: var(--color-text-blue-text-link-2);
+
+  font-size: 12px;
+  font-weight: 600;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 5%;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios h5 {
+  width: 100%;
+  height: auto;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  margin: 0;
+  margin-bottom: 1% !important;
+
+  color: var(--color-text-gray);
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil {
+  width: 100%;
+  height: auto;
+
+  margin-top: 1%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil {
+  width: 80%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 80%;
+  height: auto;
+
+  padding: 2%;
+  margin-left: 5%;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario a {
+  font-weight: 600;
+  font-size: 14px;
+
+  margin-right: 1% !important;
+  margin: 0;
+
+  color: var(--color-text-black);
+
+  text-decoration: none !important;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario p {
+  font-weight: 400;
+  font-size: 12px;
+
+  margin: 0;
+
+  color: var(--color-text-gray);
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .img {
+  width: 10%;
+  height: auto;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .img img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+.sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil button {
+  border: none;
+
+  background-color: transparent;
+
+  color: var(--color-text-blue-text-link-2);
+
+  font-size: 12px;
+  font-weight: 600;
+
+}
+
+@media(max-width: 760px) {
+
+  .sugestoes-perfil {
+    width: 25%;
+    height: auto;
+
+    margin: 0% 1%;
+
+    position: fixed;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil {
+    width: 100%;
+    height: auto;
+
+    margin-top: 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil {
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 80%;
+    height: auto;
+
+    padding: 2%;
+    margin-left: 5%;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario h5 {
+    font-weight: 600;
+    font-size: 14px;
+
+    margin-right: 1% !important;
+    margin: 0;
+
+    color: var(--color-text-black);
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil .dados-usuario p {
+    font-weight: 400;
+    font-size: 14px;
+
+    margin: 0;
+
+    color: var(--color-text-gray);
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil .img {
+    width: 20%;
+    height: auto;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil .meu-perfil .img img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+
+  }
+
+  .sugestoes-perfil .dados-meu-perfil button {
+    border: none;
+
+    background-color: transparent;
+
+    color: var(--color-text-blue-text-link-2);
+
+    font-size: 12px;
+    font-weight: 600;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 5%;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios h5 {
+    width: 100%;
+    height: auto;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    margin: 0;
+    margin-bottom: 1% !important;
+
+    color: var(--color-text-gray);
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil {
+    width: 100%;
+    height: auto;
+
+    margin-top: 1%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil {
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 80%;
+    height: auto;
+
+    padding: 2%;
+    margin-left: 5%;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario a {
+    font-weight: 600;
+    font-size: 14px;
+
+    margin-right: 1% !important;
+    margin: 0;
+
+    color: var(--color-text-black);
+
+    text-decoration: none !important;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .dados-usuario p {
+    font-weight: 400;
+    font-size: 12px;
+
+    margin: 0;
+
+    color: var(--color-text-gray);
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .img {
+    width: 10%;
+    height: auto;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil .meu-perfil .img img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+
+  }
+
+  .sugestoes-perfil .sugestoes-perfil-usuarios .dados-meu-perfil button {
+    border: none;
+
+    background-color: transparent;
+
+    color: var(--color-text-blue-text-link-2);
+
+    font-size: 12px;
+    font-weight: 600;
+
+  }
+
+}

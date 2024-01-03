@@ -19,6 +19,7 @@ import { SenhaComponent } from './edicao/senha/senha.component';
 import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
 import { ImagemComponent } from './upload/imagem/imagem.component';
 import { PostComponent } from './util/post/post.component';
+import { SugestoesComponent } from './util/sugestoes/sugestoes.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PostComponent } from './util/post/post.component';
     SenhaComponent,
     AtualizarSenhaComponent,
     ImagemComponent,
-    PostComponent
+    PostComponent,
+    SugestoesComponent
   ],
   imports: [
     BrowserModule,

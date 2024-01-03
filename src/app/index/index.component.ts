@@ -65,7 +65,6 @@ export class IndexComponent implements OnInit {
     if(this.idUsuarioLogado > 0) {
       this.findAllStorysSeguidores(this.idUsuarioLogado);
       this.findAllPostagensSeguidores(this.idUsuarioLogado);
-      this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
 
     }else {
       this.router.navigate(['/login']);
@@ -158,22 +157,6 @@ export class IndexComponent implements OnInit {
     }, erro => {
       if(erro.status == 500 || erro.status == 400) {
         alert('Ocorreu um erro ao tentar abrir a postagem!');
-
-      }
-
-    });
-
-  }
-
-  findAllUsuariosParaSeguir(id: number) {
-    this.listaDeUsuarios = [];
-
-    this.usuarioService.getAllUsuariosParaSeguir(id).subscribe((resp: Usuario[]) => {
-      this.listaDeUsuarios = resp;
-
-    }, erro => {
-      if(erro.status == 500) {
-        alert('Ocorreu um erro ao tentar carregar os usuarios!');
 
       }
 
@@ -306,7 +289,6 @@ export class IndexComponent implements OnInit {
     setTimeout(() => {
       this.findAllStorysSeguidores(this.idUsuarioLogado);
       this.findAllPostagensSeguidores(this.idUsuarioLogado);
-      this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
 
     }, 1000);
 
@@ -350,6 +332,23 @@ export class IndexComponent implements OnInit {
     });
 
     return retorno;
+  }
+
+  pushAtualizaVisualizacaoUsuario(status: any) {
+    console.log('status novo seguindo: ', status);
+
+    if(status) {
+
+      setTimeout(() => {
+        console.log('A visualizacao do usuario sera recarregada!');
+
+        this.findAllStorysSeguidores(this.idUsuarioLogado);
+        this.findAllPostagensSeguidores(this.idUsuarioLogado);
+
+      }, 1000);
+
+    }
+
   }
 
 }
