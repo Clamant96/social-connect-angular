@@ -35,10 +35,7 @@ export class HeaderComponent implements OnInit {
   public dropDownPesquisa: boolean = false;
 
   constructor(
-    private authService: AuthService,
-    private usuarioService: UsuarioService,
     public utilService: UtilService,
-    private router: Router
 
   ) { }
 
@@ -61,74 +58,6 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => {
     // OCULTA DROPDOWN PESQUISA
       window.document.querySelector('.dropdown-content')?.setAttribute('style', 'display: none !important;');
-
-    }, 1000);
-
-  }
-
-  gerenciaOcultaListaSeguidores() {
-    /*setTimeout(() => {
-      // OCULTA DROPDOWN LISTA DE SEGUIDORES
-      window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: none !important;');
-
-    }, 100);*/
-
-    this.dropDownSeguindo = !this.dropDownSeguindo;
-
-  }
-
-  renderizaSeguidores(id: number) {
-    // window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: block;');
-
-    this.gerenciaOcultaListaSeguidores();
-
-    this.usuarioService.getAllUsuariosSeguidos(id).subscribe((resp: Usuario[]) => {
-
-      this.listaUsuariosSeguidos = resp;
-
-    });
-
-  }
-
-  deixarDeSeguirUsuario(idSeguindo: number, idUsuarioLogado: number) {
-    this.usuarioService.seguirUsuario(idSeguindo, idUsuarioLogado).subscribe(() => {
-
-    }, erro => {
-      if(erro.status == 500 || erro.status == 400) {
-        alert('Ocorreu um erro ao tentar seguir o usuario!!');
-      }
-    });
-
-    this.usuarioService.getAllUsuariosSeguidos(idUsuarioLogado).subscribe((resp: Usuario[]) => {
-
-      this.listaUsuariosSeguidos = resp;
-
-    });
-
-    setTimeout(() => {
-
-      if(window.document.URL.includes("home")) {
-        this.router.navigate(['/pagina-inicial']);
-
-      }else if(window.document.URL.includes("pagina-inicial")) {
-        this.router.navigate(['/home']);
-
-      }else if(window.document.URL.includes("meu-perfil")) {
-        this.router.navigate(['/perfil/', this.id]);
-
-      }else if(window.document.URL.includes("/perfil")) {
-
-        let idUrl: number = Number(window.document.URL.split('/')[(window.document.URL.split('/').length - 1)]);
-
-        this.router.navigate(['/meu-perfil/', idUrl]);
-
-      }
-
-    }, 1000);
-
-    setTimeout(() => {
-      // OCULTA DROPDOWN LISTA DE SEGUIDORES
-      window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: none !important;');
 
     }, 1000);
 

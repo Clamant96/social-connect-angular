@@ -1,0 +1,110 @@
+.modal .modal-dialog .vizualizar-postagem {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  background-color: var(--background-section);
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .img {
+  width: 60%;
+  height: auto;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .img img {
+  width: 100%;
+  height: auto;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem {
+  width: 40%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem {
+  width: 100%;
+  height: auto;
+
+  padding: 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-bottom: 1px solid var(--border-gray);
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem .img {
+  width: 12%;
+  height: auto;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem .img img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .dados-usuario-postagem h5 {
+  font-size: 13px;
+  font-weight: 500;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem {
+  width: 100%;
+  height: auto;
+
+  padding: 2% 0%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem h5 {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}
+
+.modal .modal-dialog .vizualizar-postagem .dados-postagem .mensagens-postagem p {
+  font-size: 15px;
+  font-weight: 400;
+
+  margin: 0 !important;
+
+  color: var(--color-text-black);
+
+  margin-left: 6% !important;
+
+}

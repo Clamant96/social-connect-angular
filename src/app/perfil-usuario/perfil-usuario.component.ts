@@ -1,3 +1,4 @@
+import { UtilService } from 'src/app/service/util.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostagemService } from './../service/postagem.service';
 import { UsuarioService } from './../service/usuario.service';
@@ -34,6 +35,7 @@ export class PerfilUsuarioComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private postagemService: PostagemService,
+    public utilService: UtilService,
     private router: Router,
     private route: ActivatedRoute
 
@@ -50,29 +52,6 @@ export class PerfilUsuarioComponent implements OnInit {
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
 
-  }
-
-  carregaImagem(username: string, img: string) {
-
-    if(username == null || username == '' || img == null || img == '') {
-      return '';
-    }
-
-    if(img.includes("person_perfil_vazio")) {
-
-      return img;
-    }
-
-    // BASE 64
-    username = this.encodeBytesToBase64(username);
-    img = this.encodeBytesToBase64(img);
-
-    return `${this.url}/image/carregar/${username}/${img}`;
-  }
-
-  encodeBytesToBase64(bytes: string) {
-    const binString = btoa(bytes);
-    return btoa(binString);
   }
 
   findByIdUsuario(id: number) {
@@ -113,20 +92,6 @@ export class PerfilUsuarioComponent implements OnInit {
 
   }
 
-  disponibilizaEdicaoPerfil(id: number, idLoop: number) {
-    let trava: boolean = false;
-
-    if(id == idLoop) {
-      trava = true;
-
-    }else {
-      trava = false;
-
-    }
-
-    return trava;
-  }
-
   deixarDeSeguirUsuario(idSeguindo: number, idSeguidor: number) {
     this.usuarioService.seguirUsuario(idSeguindo, idSeguidor).subscribe(() => {
 
@@ -137,35 +102,6 @@ export class PerfilUsuarioComponent implements OnInit {
         alert('Ocorreu um erro ao tentar deixar de seguir o usuario.');
       }
     });
-  }
-
-  verificaFrase(usuario: Usuario) {
-
-    let isSeguindo: boolean = false;
-
-    try {
-
-      // console.log("listaDeSeguindo: ");
-      // console.log(usuario);
-
-      usuario.seguindo.listaDeSeguindo.map((item) => {
-
-        // console.log("item.seguindo.id: "+ item.id);
-        // console.log("this.id: "+ this.id);
-
-        if(item.id == this.id) {
-          isSeguindo = true;
-        }
-
-      });
-
-    }catch{}
-
-    if(isSeguindo) {
-      return "Deixar de seguir";
-    }else {
-      return "Seguir";
-    }
   }
 
 }

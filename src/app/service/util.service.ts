@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { Usuario } from '../model/Usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ export class UtilService {
 
   constructor(
     private authService: AuthService,
+    private router: Router,
 
   ) { }
 
@@ -119,6 +122,29 @@ export class UtilService {
     return `${this.url}/image/carregar/${username}/${img}`;
   }
 
+  verificaFrase(usuario: Usuario, id: number) {
+
+    let isSeguindo: boolean = false;
+
+    try {
+
+      usuario.seguindo.listaDeSeguindo.map((item) => {
+
+        if(item.id == id) {
+          isSeguindo = true;
+        }
+
+      });
+
+    }catch{}
+
+    if(isSeguindo) {
+      return "Deixar de seguir";
+    }else {
+      return "Seguir";
+    }
+  }
+
   defineUrlPerfilUsuarioLogado() {
 
     let retorno: string = "/meu-perfil/";
@@ -132,6 +158,27 @@ export class UtilService {
     }
 
     return retorno;
+  }
+
+  defineUrlRoteamentoGerenciamentoDeCarregamento(id: number) {
+
+    if(window.document.URL.includes("home")) {
+      this.router.navigate(['/pagina-inicial']);
+
+    }else if(window.document.URL.includes("pagina-inicial")) {
+      this.router.navigate(['/home']);
+
+    }else if(window.document.URL.includes("meu-perfil")) {
+      this.router.navigate(['/perfil/', id]);
+
+    }else if(window.document.URL.includes("/perfil")) {
+
+      let idUrl: number = Number(window.document.URL.split('/')[(window.document.URL.split('/').length - 1)]);
+
+      this.router.navigate(['/meu-perfil/', idUrl]);
+
+    }
+
   }
 
 }

@@ -23,6 +23,7 @@ import { SugestoesComponent } from './util/sugestoes/sugestoes.component';
 import { StoryUtilComponent } from './util/story/story.component';
 import { SearchComponent } from './util/search/search.component';
 import { FollowComponent } from './util/follow/follow.component';
+import { PostPerfilComponent } from './util/post-perfil/post-perfil.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FollowComponent } from './util/follow/follow.component';
     SugestoesComponent,
     StoryUtilComponent,
     SearchComponent,
-    FollowComponent
+    FollowComponent,
+    PostPerfilComponent
   ],
   imports: [
     BrowserModule,

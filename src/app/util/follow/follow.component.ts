@@ -68,22 +68,7 @@ export class FollowComponent implements OnInit {
 
     setTimeout(() => {
 
-      if(window.document.URL.includes("home")) {
-        this.router.navigate(['/pagina-inicial']);
-
-      }else if(window.document.URL.includes("pagina-inicial")) {
-        this.router.navigate(['/home']);
-
-      }else if(window.document.URL.includes("meu-perfil")) {
-        this.router.navigate(['/perfil/', this.id]);
-
-      }else if(window.document.URL.includes("/perfil")) {
-
-        let idUrl: number = Number(window.document.URL.split('/')[(window.document.URL.split('/').length - 1)]);
-
-        this.router.navigate(['/meu-perfil/', idUrl]);
-
-      }
+      this.utilService.defineUrlRoteamentoGerenciamentoDeCarregamento(this.id);
 
     }, 1000);
 
