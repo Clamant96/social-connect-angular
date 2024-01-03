@@ -1,0 +1,31 @@
+<div class="histories-usuario" routerLink="/story" >
+  <div class="img retirar-borda">
+    <img src="{{this.utilService.carregaImagem(username, img)}}" alt="{{this.utilService.carregaImagem(username, img)}}" />
+  </div>
+  <p>{{ username }}</p>
+  <div class="icon-adicionar-stories">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+    </svg>
+  </div>
+</div>
+
+<div *ngFor='let story of listaDeStorys' class="histories-usuario">
+  <div *ngIf="this.utilService.validaData(story.data)" class="img instagram retirar-borda" (click)='findByIdUsuario(story.usuario.id)' >
+    <img src="{{this.utilService.carregaImagem(story.usuario.username, story.usuario.img)}}" alt="{{this.utilService.carregaImagem(story.usuario.username, story.usuario.img)}}" />
+  </div>
+  <p *ngIf="this.utilService.validaData(story.data)" [routerLink]="['/perfil', story.usuario.id]" >{{ story.usuario.username }}</p>
+
+  <div class="w3-container">
+    <div id="gerenciar-modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="modal-storys">
+          <span onclick="document.getElementById('gerenciar-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <div class="img-story" *ngFor='let foto of usuarioStorys.storys | orderBy: key: reverse' >
+            <div class="img-s" style='background-image: url("{{this.utilService.carregaImagemStory(foto.img)}}");'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

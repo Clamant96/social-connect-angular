@@ -79,9 +79,6 @@ export class IndexComponent implements OnInit {
 
     const conversaoDataStory = new Date(dataStory).toLocaleDateString('pt-BR');
 
-    // console.log("dataStory: "+ conversaoDataStory);
-    // console.log("dataAtual: "+ dataAtual);
-
     if(conversaoDataStory == dataAtual ) {
 
       return true;

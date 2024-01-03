@@ -83,4 +83,40 @@ export class UtilService {
 
   }
 
+  validaData(dataStory: Date) {
+
+    const dataAtual = new Date().toLocaleDateString();
+
+    const conversaoDataStory = new Date(dataStory).toLocaleDateString('pt-BR');
+
+    if(conversaoDataStory == dataAtual ) {
+
+      return true;
+    }else {
+
+      return false;
+    }
+
+  }
+
+  carregaImagemStory(dado: string) {
+
+    if(dado == null || dado == '') {
+      return '';
+    }
+
+    if(dado.includes("person_perfil_vazio")) {
+
+      return dado;
+    }
+
+    let infoUsuario: string[] = dado.split('/');
+
+    // BASE 64
+    let username: string = this.encodeBytesToBase64(infoUsuario[0]);
+    let img: string = this.encodeBytesToBase64(infoUsuario[1]);
+
+    return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
 }

@@ -1,0 +1,241 @@
+.histories-usuario {
+  width: 10%;
+  height: auto;
+
+  margin: 0% 1%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+
+}
+
+.histories-usuario .img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+  border: 3px solid var(--color-text-black);
+
+}
+
+.histories-usuario .retirar-borda {
+  border: 0px solid transparent !important;
+
+}
+
+.histories-usuario .img img {
+  width: 100%;
+  height: auto;
+
+  padding: 2%;
+
+  border-radius: 50%;
+
+  margin-bottom: 0.1%;
+
+}
+
+.histories-usuario p {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 12px;
+
+  color: var(--color-text-black);
+
+  cursor: pointer;
+
+}
+
+.histories-usuario .icon-adicionar-stories {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin-top: 20%;
+
+}
+
+.histories-usuario .icon-adicionar-stories svg {
+  width: 17px !important;
+  height: 17px !important;
+
+  color: var(--background-button-blue);
+
+  background-color: var(--color-text-black);
+
+  border-radius: 50%;
+
+  border: 1px solid var(--color-text-black);
+
+  cursor: pointer;
+
+}
+
+.histories-usuario .modal-storys {
+  background-color: var(--background-section);
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow-y: scroll;
+
+}
+
+.histories-usuario .modal-storys .img-story {
+  width: 100% !important;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2%;
+
+}
+
+.histories-usuario .modal-storys .img-story .img-s {
+  width: 30vw !important;
+  height: 78vh;
+
+  background-position: center;
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+
+}
+
+@media(max-width: 760px) {
+
+  .histories-usuario {
+    width: 15%;
+    height: auto;
+
+    margin: 3% 0%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+  }
+
+  .histories-usuario .img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+    border: 3px solid var(--color-text-black);
+
+  }
+
+  .histories-usuario .retirar-borda {
+    border: 0px solid transparent !important;
+
+  }
+
+  .histories-usuario .img img {
+    width: 100%;
+    height: auto;
+
+    padding: 2%;
+
+    border-radius: 50%;
+
+  }
+
+  .histories-usuario p {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 12px;
+
+    color: var(--color-text-black);
+
+    display: none;
+
+    cursor: pointer;
+
+  }
+
+  .histories-usuario .icon-adicionar-stories {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin-top: 20%;
+
+  }
+
+  .histories-usuario .icon-adicionar-stories svg {
+    width: 17px !important;
+    height: 17px !important;
+
+    color: var(--background-button-blue);
+
+    background-color: var(--color-text-black);
+
+    border-radius: 50%;
+
+    border: 1px solid var(--color-text-black);
+
+    cursor: pointer;
+
+  }
+
+  .histories-usuario .modal-storys {
+    background-color: var(--background-section);
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow-y: scroll;
+
+  }
+
+  .histories-usuario .modal-storys .img-story {
+    width: 100% !important;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+
+  }
+
+  .histories-usuario .modal-storys .img-story .img-s {
+    width: 30vw !important;
+    height: 78vh;
+
+    background-position: center;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+
+  }
+
+}

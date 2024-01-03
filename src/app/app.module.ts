@@ -20,6 +20,7 @@ import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senh
 import { ImagemComponent } from './upload/imagem/imagem.component';
 import { PostComponent } from './util/post/post.component';
 import { SugestoesComponent } from './util/sugestoes/sugestoes.component';
+import { StoryUtilComponent } from './util/story/story.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SugestoesComponent } from './util/sugestoes/sugestoes.component';
     AtualizarSenhaComponent,
     ImagemComponent,
     PostComponent,
-    SugestoesComponent
+    SugestoesComponent,
+    StoryUtilComponent
   ],
   imports: [
     BrowserModule,
