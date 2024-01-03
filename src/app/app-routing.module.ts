@@ -1,7 +1,7 @@
 import { ImagemComponent } from './upload/imagem/imagem.component';
 import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
 import { SenhaComponent } from './edicao/senha/senha.component';
-import { StoryComponent } from './story/story.component';
+import { StoryComponent } from './upload/story/story.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';

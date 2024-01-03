@@ -1,0 +1,81 @@
+section {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section .postagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section .postagem .img-postagem {
+  margin: 0.5%;
+
+  width: 30%;
+  height: auto;
+
+}
+
+section .postagem .img-postagem img {
+  width: 100%;
+  height: auto;
+
+}
+
+section .postagem .input {
+  width: 30% !important;
+  min-width: 490px;
+  height: auto;
+
+}
+
+section .postagem .input input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px !important;
+
+  border-radius: 2px !important;
+
+  margin: 2% 0%;
+  padding: 2.5%;
+
+  background-color: var(--background-page);
+
+}
+
+section .postagem .input .botao {
+  width: 25%;
+  height: auto;
+
+  margin-top: 5%;
+
+}
+
+section .postagem .input .botao button {
+  width: 100%;
+  height: auto;
+
+  border: none;
+
+  border-radius: 3px;
+  border-color: var(--border-gray);
+
+  font-weight: 600;
+  font-size: 14px;
+
+  color: var(--color-text-white);
+
+  background-color: var(--background-button-blue);
+
+  padding: 1.5% 0%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+
+}

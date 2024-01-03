@@ -14,7 +14,7 @@ import { PerfilComponent } from './edicao/perfil/perfil.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { OrderModule } from 'ngx-order-pipe';
-import { StoryComponent } from './story/story.component';
+import { StoryComponent } from './upload/story/story.component';
 import { SenhaComponent } from './edicao/senha/senha.component';
 import { AtualizarSenhaComponent } from './edicao/atualizar-senha/atualizar-senha.component';
 import { ImagemComponent } from './upload/imagem/imagem.component';
