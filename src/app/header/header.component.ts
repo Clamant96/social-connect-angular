@@ -1,3 +1,4 @@
+import { UtilService } from 'src/app/service/util.service';
 import { Router } from '@angular/router';
 import { Seguindo } from './../model/Seguindo';
 import { UsuarioService } from './../service/usuario.service';
@@ -36,6 +37,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private usuarioService: UsuarioService,
+    public utilService: UtilService,
     private router: Router
 
   ) { }
@@ -44,56 +46,6 @@ export class HeaderComponent implements OnInit {
     window.scroll(0,0)
 
     this.imgUsuario();
-
-  }
-
-  carregaImagem(username: string, img: string) {
-
-    if(username == null || username == '' || img == null || img == '') {
-      return '';
-    }
-
-    if(img.includes("person_perfil_vazio")) {
-
-      return img;
-    }
-
-    // BASE 64
-    username = this.encodeBytesToBase64(username);
-    img = this.encodeBytesToBase64(img);
-
-    return `${this.url}/image/carregar/${username}/${img}`;
-  }
-
-  encodeBytesToBase64(bytes: string) {
-    const binString = btoa(bytes);
-    return btoa(binString);
-  }
-
-  minhaPesquisa(event: any) {
-    this.nomePesquisado = event.target.value;
-
-    this.pesquisa(this.nomePesquisado);
-
-  }
-
-  pesquisa(pesquisa: string) {
-    // window.document.querySelector('.dropdown-content')?.setAttribute('style', 'display: block;');
-
-    this.gerenciaDropDownPesquisa(true);
-
-    this.authService.pesquisaUsuario(pesquisa).subscribe((resp: Usuario[]) => {
-      this.listaUsuario = resp;
-
-      // console.log("Usuario: ");
-      // console.log(this.listaUsuario);
-
-    }, erro => {
-      this.gerenciaDropDownPesquisa(false);
-
-    });
-
-    this.nomePesquisado = '';
 
   }
 
@@ -179,26 +131,6 @@ export class HeaderComponent implements OnInit {
       window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: none !important;');
 
     }, 1000);
-
-  }
-
-  defineUrlPerfilUsuarioLogado() {
-
-    let retorno: string = "/meu-perfil/";
-
-    if(window.document.URL.includes("meu-perfil")) {
-      retorno = "/perfil/";
-
-    }else if(window.document.URL.includes("/perfil")) {
-      retorno = "/meu-perfil/";
-
-    }
-
-    return retorno;
-  }
-
-  gerenciaDropDownPesquisa(status: boolean) {
-    this.dropDownPesquisa = status;
 
   }
 

@@ -1,0 +1,244 @@
+img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
+svg {
+  width: 25px;
+  height: auto;
+
+  color: var(--color-text-black);
+
+}
+
+/* ====== DROP DOWN LISTA DE SEGUIDORES */
+.dropdown-lista-seguidores {
+  /*display: none;*/
+
+  position: absolute;
+
+  background-color: #f9f9f9;
+
+  width: 29.5%;
+  height: auto;
+
+  margin-top: 0.5%;
+  margin-left: -20%;
+
+  box-shadow: 0px 3px 5px -5px var(--box-shadow);
+
+  padding: 12px 16px;
+
+  z-index: 1;
+
+}
+
+.dropdown-lista-seguidores .fechar {
+  width: 100% !important;
+  height: auto !important;
+
+  color: var(--color-text-blue-text-link-2);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.dropdown-lista-seguidores .instagram {
+  width: 100% !important;
+  height: 1.5px !important;
+
+  padding: 0% !important;
+  margin-bottom: 1% !important;
+
+}
+
+.dropdown-lista-seguidores .usuario {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.dropdown-lista-seguidores .usuario img {
+  width: 15%;
+  height: auto;
+
+  padding: 0.5%;
+  margin: 1%;
+
+  border-radius: 50%;
+  border: 1px solid var(--border-gray);
+
+}
+
+.dropdown-lista-seguidores .usuario .dados-usuario {
+  width: 96%;
+  height: auto;
+
+  padding: 0% 2%;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+.dropdown-lista-seguidores .usuario .dados-usuario a {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: var(--color-text-black);
+
+  text-decoration: none;
+
+}
+
+.dropdown-lista-seguidores .usuario .dados-usuario p {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: var(--color-text-gray);
+
+}
+
+.dropdown-lista-seguidores .usuario .deixar-de-seguir {
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-blue-text-link-2);
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+@media(max-width: 760px) {
+
+  img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+
+  }
+
+  svg {
+    width: 25px;
+    height: auto;
+
+    color: var(--color-text-black);
+
+  }
+
+  /* ====== DROP DOWN LISTA DE SEGUIDORES */
+  .dropdown-lista-seguidores {
+    display: none;
+
+    position: absolute;
+
+    background-color: #f9f9f9;
+
+    width: 29.5%;
+    height: auto;
+
+    margin-top: 0.5%;
+    margin-left: -20%;
+
+    box-shadow: 0px 3px 5px -5px var(--box-shadow);
+
+    padding: 12px 16px;
+
+    z-index: 1;
+
+  }
+
+  .dropdown-lista-seguidores .usuario {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .dropdown-lista-seguidores .usuario img {
+    width: 15%;
+    height: auto;
+
+    padding: 0.5%;
+    margin: 1%;
+
+    border-radius: 50%;
+    border: 1px solid var(--border-gray);
+
+  }
+
+  .dropdown-lista-seguidores .usuario .dados-usuario {
+    width: 96%;
+    height: auto;
+
+    padding: 0% 2%;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+  .dropdown-lista-seguidores .usuario .dados-usuario a {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--color-text-black);
+
+    text-decoration: none;
+
+  }
+
+  .dropdown-lista-seguidores .usuario .dados-usuario p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--color-text-gray);
+
+  }
+
+  .dropdown-lista-seguidores .usuario .deixar-de-seguir {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-blue-text-link-2);
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+  }
+
+}

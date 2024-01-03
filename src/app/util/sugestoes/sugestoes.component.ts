@@ -36,7 +36,11 @@ export class SugestoesComponent implements OnInit {
 
     }
 
-    this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
+    if(this.idUsuarioLogado > 0) {
+      this.findAllUsuariosParaSeguir(this.idUsuarioLogado);
+
+    }
+
 
   }
 

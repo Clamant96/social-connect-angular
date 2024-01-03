@@ -21,6 +21,8 @@ import { ImagemComponent } from './upload/imagem/imagem.component';
 import { PostComponent } from './util/post/post.component';
 import { SugestoesComponent } from './util/sugestoes/sugestoes.component';
 import { StoryUtilComponent } from './util/story/story.component';
+import { SearchComponent } from './util/search/search.component';
+import { FollowComponent } from './util/follow/follow.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { StoryUtilComponent } from './util/story/story.component';
     ImagemComponent,
     PostComponent,
     SugestoesComponent,
-    StoryUtilComponent
+    StoryUtilComponent,
+    SearchComponent,
+    FollowComponent
   ],
   imports: [
     BrowserModule,

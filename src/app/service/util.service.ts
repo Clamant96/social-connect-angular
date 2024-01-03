@@ -119,4 +119,19 @@ export class UtilService {
     return `${this.url}/image/carregar/${username}/${img}`;
   }
 
+  defineUrlPerfilUsuarioLogado() {
+
+    let retorno: string = "/meu-perfil/";
+
+    if(window.document.URL.includes("meu-perfil")) {
+      retorno = "/perfil/";
+
+    }else if(window.document.URL.includes("/perfil")) {
+      retorno = "/meu-perfil/";
+
+    }
+
+    return retorno;
+  }
+
 }
