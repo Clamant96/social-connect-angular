@@ -29,6 +29,8 @@ export class PerfilUsuarioComponent implements OnInit {
 
   public url: string = `${environment.service}${environment.port}`;
 
+  public fraseSeguidor: string = "";
+
   constructor(
     private usuarioService: UsuarioService,
     private postagemService: PostagemService,
@@ -61,7 +63,16 @@ export class PerfilUsuarioComponent implements OnInit {
       return img;
     }
 
+    // BASE 64
+    username = this.encodeBytesToBase64(username);
+    img = this.encodeBytesToBase64(img);
+
     return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
+  encodeBytesToBase64(bytes: string) {
+    const binString = btoa(bytes);
+    return btoa(binString);
   }
 
   findByIdUsuario(id: number) {
@@ -114,6 +125,47 @@ export class PerfilUsuarioComponent implements OnInit {
     }
 
     return trava;
+  }
+
+  deixarDeSeguirUsuario(idSeguindo: number, idSeguidor: number) {
+    this.usuarioService.seguirUsuario(idSeguindo, idSeguidor).subscribe(() => {
+
+      this.router.navigate(['/home']);
+
+    }, erro => {
+      if(erro.status == 500 || erro.status == 400) {
+        alert('Ocorreu um erro ao tentar deixar de seguir o usuario.');
+      }
+    });
+  }
+
+  verificaFrase(usuario: Usuario) {
+
+    let isSeguindo: boolean = false;
+
+    try {
+
+      // console.log("listaDeSeguindo: ");
+      // console.log(usuario);
+
+      usuario.seguindo.listaDeSeguindo.map((item) => {
+
+        // console.log("item.seguindo.id: "+ item.id);
+        // console.log("this.id: "+ this.id);
+
+        if(item.id == this.id) {
+          isSeguindo = true;
+        }
+
+      });
+
+    }catch{}
+
+    if(isSeguindo) {
+      return "Deixar de seguir";
+    }else {
+      return "Seguir";
+    }
   }
 
 }

@@ -35,7 +35,7 @@ export class CadastroComponent implements OnInit {
       alert('As senhas estao incorretas!');
 
     }else {
-      this.usuario.img = "../../assets/img/person_perfil_vazio.png";
+      this.usuario.img = "assets/img/person_perfil_vazio.png";
 
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;

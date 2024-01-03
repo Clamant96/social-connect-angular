@@ -85,6 +85,8 @@ section .bloco-perfil .dados-perfil .nome-perfil a {
 
   text-decoration: none;
 
+  cursor: pointer;
+
 }
 
 section .bloco-perfil .dados-perfil .nome-perfil .icon {

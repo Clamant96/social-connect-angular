@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit {
 
   public url: string = `${environment.service}${environment.port}`;
 
+  public dropDownSeguindo: boolean = false;
+  public dropDownPesquisa: boolean = false;
+
   constructor(
     private authService: AuthService,
     private usuarioService: UsuarioService,
@@ -55,7 +58,16 @@ export class HeaderComponent implements OnInit {
       return img;
     }
 
+    // BASE 64
+    username = this.encodeBytesToBase64(username);
+    img = this.encodeBytesToBase64(img);
+
     return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
+  encodeBytesToBase64(bytes: string) {
+    const binString = btoa(bytes);
+    return btoa(binString);
   }
 
   minhaPesquisa(event: any) {
@@ -66,13 +78,18 @@ export class HeaderComponent implements OnInit {
   }
 
   pesquisa(pesquisa: string) {
-    window.document.querySelector('.dropdown-content')?.setAttribute('style', 'display: block;');
+    // window.document.querySelector('.dropdown-content')?.setAttribute('style', 'display: block;');
+
+    this.gerenciaDropDownPesquisa(true);
 
     this.authService.pesquisaUsuario(pesquisa).subscribe((resp: Usuario[]) => {
       this.listaUsuario = resp;
 
-      console.log("Usuario: ");
-      console.log(this.listaUsuario);
+      // console.log("Usuario: ");
+      // console.log(this.listaUsuario);
+
+    }, erro => {
+      this.gerenciaDropDownPesquisa(false);
 
     });
 
@@ -82,7 +99,7 @@ export class HeaderComponent implements OnInit {
 
   imgUsuario() {
     if(this.img == null) {
-      this.img = '../../assets/img/person_perfil_vazio.png';
+      this.img = 'assets/img/person_perfil_vazio.png';
 
     }
 
@@ -97,17 +114,21 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  ocultaListaSeguidores() {
-    setTimeout(() => {
+  gerenciaOcultaListaSeguidores() {
+    /*setTimeout(() => {
       // OCULTA DROPDOWN LISTA DE SEGUIDORES
       window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: none !important;');
 
-    }, 100);
+    }, 100);*/
+
+    this.dropDownSeguindo = !this.dropDownSeguindo;
 
   }
 
   renderizaSeguidores(id: number) {
-    window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: block;');
+    // window.document.querySelector('.dropdown-lista-seguidores')?.setAttribute('style', 'display: block;');
+
+    this.gerenciaOcultaListaSeguidores();
 
     this.usuarioService.getAllUsuariosSeguidos(id).subscribe((resp: Usuario[]) => {
 
@@ -174,6 +195,11 @@ export class HeaderComponent implements OnInit {
     }
 
     return retorno;
+  }
+
+  gerenciaDropDownPesquisa(status: boolean) {
+    this.dropDownPesquisa = status;
+
   }
 
 }

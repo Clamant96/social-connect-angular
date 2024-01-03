@@ -163,7 +163,7 @@ header .header .itens-header .menu-usuario .img-perfil svg {
 
 /* === DROPDOWN === */
 header .header .itens-header .pesquisa .dropdown-content {
-  display: none;
+  /*display: none;*/
 
   position: absolute;
 
@@ -240,7 +240,7 @@ header .header .itens-header .pesquisa .dropdown-content .usuario .dados-usuario
 
 /* ====== DROP DOWN LISTA DE SEGUIDORES */
 header .header .itens-header .menu-usuario .img-perfil .dropdown-lista-seguidores {
-  display: none;
+  /*display: none;*/
 
   position: absolute;
 
@@ -525,7 +525,7 @@ header .header .itens-header .menu-usuario .img-perfil .dropdown-lista-seguidore
 
   /* === DROPDOWN === */
   header .header .itens-header .pesquisa .dropdown-content {
-    display: none;
+    /*display: none;*/
 
     position: absolute;
 

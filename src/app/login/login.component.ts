@@ -36,13 +36,13 @@ export class LoginComponent implements OnInit {
       environment.biografia = this.userLogin.biografia;
       environment.site = this.userLogin.site;
 
-      console.log(environment.id);
+      /*console.log(environment.id);
       console.log(environment.nome);
       console.log(environment.username);
       console.log(environment.img);
       console.log(environment.token);
       console.log(environment.biografia);
-      console.log(environment.site);
+      console.log(environment.site);*/
 
       /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
       localStorage.setItem('token', environment.token);

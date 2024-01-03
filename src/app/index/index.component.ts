@@ -78,10 +78,10 @@ export class IndexComponent implements OnInit {
 
     const dataAtual = new Date().toLocaleDateString();
 
-    const conversaoDataStory = new Date(dataStory).toLocaleDateString('en-US');
+    const conversaoDataStory = new Date(dataStory).toLocaleDateString('pt-BR');
 
-    console.log("dataStory: "+ conversaoDataStory);
-    console.log("dataAtual: "+ dataAtual);
+    // console.log("dataStory: "+ conversaoDataStory);
+    // console.log("dataAtual: "+ dataAtual);
 
     if(conversaoDataStory == dataAtual ) {
 
@@ -104,7 +104,16 @@ export class IndexComponent implements OnInit {
       return img;
     }
 
+    // BASE 64
+    username = this.encodeBytesToBase64(username);
+    img = this.encodeBytesToBase64(img);
+
     return `${this.url}/image/carregar/${username}/${img}`;
+  }
+
+  encodeBytesToBase64(bytes: string) {
+    const binString = btoa(bytes);
+    return btoa(binString);
   }
 
   carregaImagemStory(img: string) {

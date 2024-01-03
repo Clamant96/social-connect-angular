@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
   service: 'http://localhost:',
-  //service: 'https://social-connect.',
+  // service: 'http://191.101.70.14',
   port: '8080',
-  //port: 'herokuapp.com',
+  // port: ':8080/SocialConnect',
   id: 0,
   nome: '',
   username: '',

@@ -65,7 +65,7 @@ export class PerfilComponent implements OnInit {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
 
       if(resp.img == null) {
-        resp.img = '../../assets/img/person_perfil_vazio.png';
+        resp.img = 'assets/img/person_perfil_vazio.png';
 
       }
 
